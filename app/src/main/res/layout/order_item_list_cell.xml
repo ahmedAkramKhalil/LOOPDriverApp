@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itemList_ll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#f1f1f1"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_list_detail_cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        app:cardBackgroundColor="#ffffff"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:contentPadding="@dimen/_8sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/item_chkBox"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_gravity="center|start"
+                    android:buttonTint="@color/appThemeColor_1"
+                    android:gravity="center"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:visibility="visible" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/itemArea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_1sdp"
+                    android:visibility="gone"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:elevation="@dimen/_2sdp">
+
+                    <com.view.SelectableRoundedImageView
+                        android:id="@+id/itemImg"
+                        android:layout_width="@dimen/_55sdp"
+                        android:layout_height="@dimen/_55sdp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/roundrect" />
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <com.view.MTextView
+                        android:id="@+id/itemNameTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="start|center"
+                        android:includeFontPadding="false"
+                        android:text="ssss"
+                        android:textAlignment="viewStart"
+                        android:textColor="#141414"
+                        android:textSize="@dimen/_11ssp"
+                        app:customTypeFace="@string/systemMediumFont" />
+
+                    <com.view.MTextView
+
+                        android:id="@+id/subItemNameTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textAlignment="viewStart"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/_11ssp"
+                        android:visibility="gone"
+                        app:customTypeFace="@string/systemLightFont" />
+
+                    <com.view.MTextView
+                        android:textAlignment="viewStart"
+                        android:id="@+id/itemPriceTxt"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:includeFontPadding="false"
+                        android:text="ssss"
+                        android:textColor="@color/appThemeColor_1"
+                        android:textSize="@dimen/_15ssp"
+                        app:customTypeFace="@string/systemSemiBold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="@dimen/_10sdp">
+
+                <ImageView
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_clear"></ImageView>
+
+                <com.view.MTextView
+                    android:id="@+id/itemQuantityTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:layout_marginEnd="3dp"
+
+                    android:paddingStart="@dimen/_8sdp"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textColor="#141414"
+                    android:textSize="@dimen/_11ssp"
+                    app:customTypeFace="@string/systemMediumFont" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

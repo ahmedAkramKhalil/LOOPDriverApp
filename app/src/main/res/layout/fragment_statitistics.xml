@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/toparea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar_include"
+            android:orientation="horizontal">
+
+            <com.view.MTextView
+                android:id="@+id/yearTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:text="Year"
+                android:textSize="@dimen/_16ssp"
+                app:customTypeFace="@string/systemSemiBold" />
+
+            <LinearLayout
+                android:id="@+id/yearSelectArea"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/calenderImg"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="@dimen/_10ssp"
+                    android:gravity="center"
+                    android:tint="@color/appThemeColor_1"
+                    app:srcCompat="@drawable/ic_calender" />
+
+                <com.view.MTextView
+                    android:id="@+id/yearBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:text="2019"
+                    android:textColor="@color/appThemeColor_1"
+                    android:textSize="@dimen/_14ssp"
+                    app:customTypeFace="@string/systemMediumFont" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/chartContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/bottomarea"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_weight="0"
+            app:cardCornerRadius="@dimen/_6sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/image_1"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:tint="@color/appThemeColor_1"
+                        app:srcCompat="@drawable/ic_sports_car" />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/_2sdp"
+                        android:layout_toEndOf="@id/image_1"
+                        android:gravity="center_vertical">
+
+                        <com.autofit.et.lib.AutoFitEditText
+                            android:id="@+id/noTripVTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@id/noTripHTxt"
+                            android:layout_marginStart="@dimen/_10ssp"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:gravity="center|start"
+                            android:maxLines="1"
+                            android:textAlignment="viewStart"
+                            android:textColor="#141414"
+                            android:textSize="@dimen/_22ssp"
+                            app:customTypeFace="@string/systemMediumFont"
+                            tools:text="450450450450450" />
+
+                        <com.view.MTextView
+                            android:id="@+id/noTripHTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="@dimen/_10ssp"
+                            android:layout_marginBottom="@dimen/_2sdp"
+                            android:ellipsize="end"
+                            android:gravity="start|center_vertical"
+                            android:maxLines="2"
+                            android:textAlignment="viewStart"
+                            android:textColor="#5e5c5c"
+                            android:textSize="@dimen/_10ssp"
+                            app:customTypeFace="@string/systemLightFont"
+                            tools:text="Number of trips Number of trips Number of trips " />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center_vertical"
+                    android:background="#e8e8e8" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/image_2"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:tint="@color/appThemeColor_1"
+                        app:srcCompat="@drawable/ic_coin_stack" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/_2sdp"
+                        android:layout_toEndOf="@id/image_2"
+                        android:gravity="center_vertical">
+
+                        <com.autofit.et.lib.AutoFitEditText
+                            android:id="@+id/totalearnVTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@id/totalearnHTxt"
+                            android:layout_marginStart="@dimen/_10ssp"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:gravity="center|start"
+                            android:maxLines="1"
+                            android:textAlignment="viewStart"
+                            android:textColor="#141414"
+                            android:textSize="@dimen/_22ssp"
+                            app:customTypeFace="@string/systemMediumFont"
+                            tools:text="$45450450450450450" />
+
+                        <com.view.MTextView
+                            android:id="@+id/totalearnHTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="@dimen/_10ssp"
+                            android:layout_marginBottom="@dimen/_2sdp"
+                            android:ellipsize="end"
+                            android:gravity="start|center_vertical"
+                            android:maxLines="2"
+                            android:textAlignment="viewStart"
+                            android:textColor="#5e5c5c"
+                            android:textSize="@dimen/_10ssp"
+                            app:customTypeFace="@string/systemLightFont"
+                            tools:text="Total earning Total earning Total earning " />
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+
+    <com.view.anim.loader.AVLoadingIndicatorView
+
+        android:id="@+id/loaderView"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerInParent="true"
+        android:background="@android:color/transparent"
+        android:visibility="gone"
+        app:indicator="BallSpinFadeLoader"
+        app:indicator_color="@color/appThemeColor_1" />
+
+    <com.view.ErrorView
+        android:id="@+id/errorView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+</RelativeLayout>

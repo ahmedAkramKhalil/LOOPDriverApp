@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/headar_area"
+        layout="@layout/design_toolbar_general" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/contentArea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp">
+
+                    <include
+                        android:id="@+id/vPaymentEmailBox"
+                        layout="@layout/editbox_form_design"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <include
+                        android:id="@+id/vBankAccountHolderNameBox"
+                        layout="@layout/editbox_form_design"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <include
+                        android:id="@+id/vAccountNumberBox"
+                        layout="@layout/editbox_form_design"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <include
+                        android:id="@+id/vBankName"
+                        layout="@layout/editbox_form_design"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <include
+                        android:id="@+id/vBankLocation"
+                        layout="@layout/editbox_form_design"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+
+
+                    <include
+                        android:id="@+id/vBIC_SWIFT_Code"
+                        layout="@layout/editbox_form_design"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+            <include
+                android:layout_margin="@dimen/_20sdp"
+                android:id="@+id/submitBtn"
+                layout="@layout/btn_type_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0" />
+        </LinearLayout>
+
+
+        <ProgressBar
+            android:id="@+id/loadingBar"
+            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

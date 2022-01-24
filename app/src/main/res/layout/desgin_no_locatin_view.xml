@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/noLocView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appThemeColor_bg_parent_1"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:clickable="true"
+        android:layout_height="match_parent"
+        android:background="#a6000000" />
+
+    <LinearLayout
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/all_roundcurve_card"
+        android:layout_width="match_parent"
+        android:clickable="true"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/reqRelView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <include
+
+                layout="@layout/no_location_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

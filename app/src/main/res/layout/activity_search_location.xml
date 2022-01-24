@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_search_location"
+    android:background="#F1F1F1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchLocationActivity">
+
+    <LinearLayout
+        android:id="@+id/headerview"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/appThemeColor_1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:paddingEnd="25dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:background="@drawable/search_shape"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_search_black_24dp"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"/>
+
+                <EditText
+                    android:id="@+id/searchTxt"
+                    layout="@layout/editbox_form_design"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/search_shape"
+                    android:fontFamily="@string/systemRegular"
+                    android:hint="search"
+                    android:inputType="textNoSuggestions"
+                    android:singleLine="true"
+                    android:textAlignment="viewStart" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageCancel"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="-40dp"
+                android:src="@mipmap/ic_cancel_cab_request"
+
+                android:tint="@android:color/black" />
+
+            <com.view.MTextView
+                android:id="@+id/cancelTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:text="Cancel"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_size_14"
+                app:customTypeFace="roboto_light" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/dataArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headerview">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:visibility="visible"
+                android:id="@+id/placesarea"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:visibility="visible"
+                    android:id="@+id/placesInfoArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/placearea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <LinearLayout
+                            android:background="#F1F1F1"
+                            android:layout_gravity="start|center"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal">
+
+                            <com.view.MTextView
+                                android:id="@+id/locPlacesTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:gravity="start"
+                                android:paddingStart="10dp"
+                                android:text="PLACES"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/txt_size_16"
+                                android:textStyle="bold"
+                                app:customTypeFace="@string/systemRegular" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/homeArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_margin="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="57dp"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+
+                                <LinearLayout
+                                    android:id="@+id/homeImgBack"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:layout_marginEnd="@dimen/_5sdp"
+                                    android:background="@drawable/round_shape"
+                                    android:backgroundTint="#1B351B"
+                                    android:layout_width="@dimen/_35sdp"
+                                    android:layout_height="@dimen/_35sdp">
+
+                                    <ImageView
+                                        android:id="@+id/homeroundImage"
+                                        android:layout_width="@dimen/_17sdp"
+                                        android:layout_height="@dimen/_17sdp"
+                                        android:layout_gravity="center"
+                                        android:tint="@color/appThemeColor_TXT_1"
+                                        app:srcCompat="@drawable/ic_home_address" />
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:id="@+id/homeLocArea"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <com.view.MTextView
+                                        android:id="@+id/homePlaceTxt"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="start|center_vertical"
+                                        android:maxLines="1"
+                                        android:text="Home place"
+                                        android:textAlignment="viewStart"
+                                        android:textColor="#909090"
+                                        android:textSize="@dimen/_12ssp"
+                                        app:fontFamily="@string/systemSemiBold"
+                                        app:customTypeFace="@string/systemRegular" />
+
+                                    <com.view.MTextView
+                                        android:id="@+id/homePlaceHTxt"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="start|center_vertical"
+                                        android:maxLines="1"
+                                        android:text="Mondeal square"
+                                        android:textAlignment="viewStart"
+                                        android:textColor="#909090"
+                                        android:textSize="@dimen/_12ssp"
+                                        android:visibility="gone"
+                                        app:customTypeFace="@string/systemRegular" />
+                                </LinearLayout>
+
+                                <ImageView
+                                    android:id="@+id/homeActionImgView"
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_weight="0"
+                                    android:gravity="center"
+                                    android:tint="#909090" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/mapLocArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <View
+                                android:id="@+id/mapLine"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginBottom="3dp"
+                                android:background="#D4D4D4" />
+
+                            <LinearLayout
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/all_btn_height"
+                                android:background="@color/white"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+
+                                <LinearLayout
+                                    android:id="@+id/workImgBack"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:layout_marginEnd="@dimen/_5sdp"
+                                    android:background="@drawable/round_shape"
+                                    android:backgroundTint="#862405"
+                                    android:layout_width="@dimen/_35sdp"
+                                    android:layout_height="@dimen/_35sdp">
+
+                                    <ImageView
+                                        android:id="@+id/workroundImage"
+                                        android:layout_width="@dimen/_17sdp"
+                                        android:layout_height="@dimen/_17sdp"
+                                        android:layout_gravity="center"
+                                        android:tint="@color/appThemeColor_TXT_1"
+                                        app:srcCompat="@drawable/ic_current_location" />
+
+                                </LinearLayout>
+
+                                <com.view.MTextView
+                                    android:id="@+id/mapLocTxt"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:clickable="false"
+                                    android:gravity="start|center"
+                                    app:customTypeFace="@string/systemRegular"
+                                    android:paddingStart="10dp"
+                                    android:text="I want services at my current location"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_12ssp"
+                                    android:visibility="visible" />
+
+                                <ImageView
+                                    android:id="@+id/ivRightArrow2"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="center"
+                                    android:src="@mipmap/ic_arrow_right"
+                                    android:tint="#909090" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/recentLocationArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.view.MTextView
+                            android:id="@+id/recentLocHTxtView"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:gravity="start|center"
+                            android:paddingStart="10dp"
+                            android:text=""
+                            android:background="#F1F1F1"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            app:customTypeFace="@string/systemRegular"
+                            android:textSize="@dimen/txt_size_16"
+                            android:visibility="visible" />
+
+                        <ScrollView
+                            android:id="@+id/recentScrollView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fillViewport="true">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:visibility="gone"
+                                    android:id="@+id/sourceLocationView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    >
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:visibility="gone"
+                                    android:id="@+id/destLocationView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    >
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </ScrollView>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/placesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/headerview"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/googleimagearea"
+                android:layout_width="170dp"
+                android:layout_height="20dp"
+                android:layout_below="@+id/placesRecyclerView"
+                android:layout_gravity="end"
+                android:src="@drawable/google"
+                android:visibility="visible" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <com.view.MTextView
+        android:id="@+id/noPlacedata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="2sp"
+        android:text=""
+        android:textColor="#1c1c1c"
+        android:textSize="@dimen/txt_size_16"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+</RelativeLayout>

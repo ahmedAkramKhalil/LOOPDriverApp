@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/serviceArea"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:background="#f1f1f1"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/itemLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+
+            android:id="@+id/layoutBackground"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+          >
+
+            <ImageView
+                android:id="@+id/roundImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+
+        <com.view.MTextView
+            android:id="@+id/txt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:enabled="false"
+            android:gravity="start|center_vertical"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:text="add home"
+
+            android:textAlignment="viewStart"
+            android:textColor="#343434" />
+
+        <com.view.MTextView
+            android:id="@+id/txt_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="0"
+            android:enabled="false"
+            android:gravity="end"
+            android:minHeight="40dp"
+            android:padding="5dp"
+            android:textAlignment="viewEnd"
+            android:textColor="#333"
+            android:textSize="@dimen/txt_size_16"
+            android:visibility="gone"
+            tools:text="category" />
+
+        <ImageView
+            android:id="@+id/rightImage"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ic_arrow" />
+
+    </LinearLayout>
+
+</LinearLayout>

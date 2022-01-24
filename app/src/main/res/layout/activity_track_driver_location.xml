@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ActiveTripActivity">
+
+    <include
+        android:id="@+id/toolbar_include"
+        layout="@layout/design_toolbar_general" />
+
+
+    <RelativeLayout
+        android:id="@+id/rootRelView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--main view-->
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/navigationViewAreaMain">
+
+
+            <fragment
+                android:id="@+id/mapV2"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+
+
+            <!--error  view-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/errorLocArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ProgressBar
+                        android:id="@+id/mProgressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="-5dp"
+                        android:visibility="visible" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/appThemeColor_TXT_1"
+                        android:gravity="center">
+
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="15dp"
+                            android:src="@android:drawable/stat_notify_error"
+                            android:tint="#d74933" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:orientation="vertical"
+                            android:padding="5dp">
+
+                            <com.view.MTextView
+                                android:id="@+id/errorTitleTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:gravity="start|center"
+                                android:text=""
+                                android:textAlignment="viewStart"
+                                android:textSize="@dimen/txt_size_16"
+                                android:tint="@color/appThemeColor_Accent" />
+
+                            <com.view.MTextView
+                                android:id="@+id/errorSubTitleTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="5dp"
+                                android:gravity="start|center"
+                                android:text=""
+                                android:textAlignment="viewStart"
+                                android:textSize="@dimen/txt_size_12"
+                                android:tint="@color/appThemeColor_Accent" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+          <!--  <LinearLayout
+                android:id="@+id/area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/navArrowImgView"
+                android:orientation="vertical">
+                &lt;!&ndash;  android:background="@android:color/transparent"&ndash;&gt;
+
+
+                <com.view.MTextView
+                    android:id="@+id/timeTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:background="#272727"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textColor="@color/appThemeColor_TXT_2"
+                    android:textSize="@dimen/txt_size_16"
+                    android:visibility="gone" />
+
+
+                <com.view.MTextView
+                    android:id="@+id/tollTxtView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@color/appThemeColor_TXT_2"
+
+                    android:ellipsize="end"
+                    android:gravity="start|center_vertical"
+                    android:padding="5dp"
+                    android:textColor="#1C1C1C"
+                    android:textSize="@dimen/txt_size_16"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>-->
+
+        </RelativeLayout>
+        <!--card area address-->
+        <RelativeLayout
+            android:visibility="visible"
+            android:id="@+id/navigationViewArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:background="@color/appThemeColor_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"/>
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <include
+                    android:id="@+id/toolbar_include"
+                    layout="@layout/navigation_view" />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+        <!--detailcardview-->
+        <RelativeLayout
+            android:id="@+id/cardArea"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="@dimen/_minus10sdp"
+                app:cardCornerRadius="@dimen/_12sdp">
+
+                <RelativeLayout
+                    android:clickable="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/_10sdp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_30sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginBottom="@dimen/_10sdp"
+                                android:orientation="vertical">
+
+
+                                <com.view.MTextView
+                                    android:visibility="gone"
+                                    android:id="@+id/nameTxt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_marginEnd="@dimen/_120sdp"
+                                    android:text=""
+                                    android:textColor="#141414"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:customTypeFace="@string/systemSemiBold" />
+
+                                <com.view.MTextView
+                                    android:visibility="gone"
+                                    android:id="@+id/pickupNameTxt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="textCapWords"
+                                    android:text="passenger"
+                                    android:textColor="#141414"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:customTypeFace="@string/systemSemiBold" />
+
+                                <com.view.simpleratingbar.SimpleRatingBar
+                                    android:visibility="gone"
+                                    android:id="@+id/ratingBar"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:SRB_fillColor="@color/ratingfill"
+                                    app:SRB_isIndicator="true"
+                                    app:SRB_numberOfStars="5"
+                                    app:SRB_starBackgroundColor="#c9c9c9"
+                                    app:SRB_starSize="@dimen/_10ssp"
+                                    app:SRB_starsSeparation="0dp"
+                                    app:SRB_stepSize="0.5" />
+
+                                <com.view.MTextView
+                                    android:text="dfgdfgd"
+                                    android:textColor="#a4a4a4"
+                                    android:textSize="@dimen/_8ssp"
+                                    app:customTypeFace="@string/systemRegular"
+                                    android:visibility="gone"
+                                    android:id="@+id/recipientTxt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    />
+                            </LinearLayout>
+
+                            <com.view.MTextView
+                                android:includeFontPadding="false"
+                                android:id="@+id/distanceTxt"
+                                android:gravity="center"
+                                android:layout_marginEnd="@dimen/_20sdp"
+                                android:minWidth="@dimen/_65sdp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_25sdp"
+                                tools:text="0.8 Mi"
+                                android:textColor="#161616"
+                                android:textSize="@dimen/_15ssp"
+                                app:customTypeFace="@string/systemRegular" />
+
+                            <com.view.MTextView
+                                android:id="@+id/timeTxt"
+                                android:gravity="center"
+                                android:layout_marginEnd="@dimen/_20sdp"
+                                android:minWidth="@dimen/_65sdp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/distanceTxt"
+                                android:layout_alignParentEnd="true"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                tools:text="7 min"
+                                android:textColor="#a4a4a4"
+                                android:textSize="@dimen/_8ssp"
+                                app:customTypeFace="@string/systemRegular" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+        <!--floating buttons-->
+        <LinearLayout
+            android:layout_marginBottom="@dimen/_minus23sdp"
+            android:layout_above="@id/cardArea"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/callArea"-->
+<!--                android:layout_width="@dimen/_45sdp"-->
+<!--                android:layout_height="@dimen/_45sdp" >-->
+<!--                <ImageView-->
+<!--                    android:tint="@color/white"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    app:srcCompat="@drawable/ic_telephone"-->
+<!--                    android:layout_width="@dimen/_20sdp"-->
+<!--                    android:layout_height="@dimen/_20sdp" />-->
+<!--            </RelativeLayout>-->
+
+            <RelativeLayout
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:background="@drawable/circle_shadow_big">
+
+                <ImageView
+                    android:id="@+id/callArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:padding="@dimen/_10sdp"
+                    android:tint="@color/white"
+                    app:srcCompat="@drawable/ic_telephone" />
+            </RelativeLayout>
+
+<!--            <RelativeLayout-->
+<!--                android:layout_marginStart="@dimen/_10sdp"-->
+<!--                android:id="@+id/navigateAreaUP"-->
+<!--                android:layout_width="@dimen/_45sdp"-->
+<!--                android:layout_height="@dimen/_45sdp" >-->
+<!--                <ImageView-->
+<!--                    android:rotation="-45"-->
+<!--                    android:tint="@color/white"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    app:srcCompat="@drawable/ic_navigation"-->
+<!--                    android:layout_width="@dimen/_20sdp"-->
+<!--                    android:layout_height="@dimen/_20sdp" />-->
+<!--            </RelativeLayout>-->
+            <RelativeLayout
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:background="@drawable/circle_shadow_big">
+
+                <ImageView
+                    android:id="@+id/navigateAreaUP"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:padding="@dimen/_10sdp"
+                    android:rotation="-45"
+                    android:tint="@color/white"
+                    app:srcCompat="@drawable/ic_navigation" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/no_gps_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <include
+                layout="@layout/desgin_no_locatin_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+
+<!--        &lt;!&ndash;WayBill&ndash;&gt;-->
+<!--        <RelativeLayout-->
+<!--            android:background="@drawable/circle_shadow_big"-->
+<!--            android:visibility="gone"-->
+<!--            android:layout_marginEnd="@dimen/_20sdp"-->
+<!--            android:layout_marginTop="@dimen/_10sdp"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_below="@id/navigationViewArea"-->
+<!--            android:id="@+id/wayBillImgView"-->
+<!--            android:layout_width="@dimen/_50sdp"-->
+<!--            android:layout_height="@dimen/_50sdp">-->
+<!--            <ImageView-->
+<!--                android:layout_centerInParent="true"-->
+<!--                android:layout_width="@dimen/_20sdp"-->
+<!--                android:layout_height="@dimen/_20sdp"-->
+<!--                app:srcCompat="@drawable/ic_document"-->
+<!--                android:tint="@color/black" />-->
+<!--        </RelativeLayout>-->
+
+    </RelativeLayout>
+
+
+</LinearLayout>

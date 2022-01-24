@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "855139257879",
+    "firebase_url": "https://loop-22679-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "loop-22679",
+    "storage_bucket": "loop-22679.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:855139257879:android:f68203c0e0022bd4ee5652",
+        "android_client_info": {
+          "package_name": "ooo.loop.Driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "855139257879-i145ug18d5n4d0vfgj59636l6vnijimd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAygtNziY6GcxxwobtUpYqRxmPyc8skSfo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "855139257879-i145ug18d5n4d0vfgj59636l6vnijimd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "855139257879-lreiq9j1a8070p009eh0ub37r76p4dga.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "ooo.loop.passenger"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:855139257879:android:c2ec736838caddfdee5652",
+        "android_client_info": {
+          "package_name": "ooo.loop.passenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "855139257879-i145ug18d5n4d0vfgj59636l6vnijimd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAygtNziY6GcxxwobtUpYqRxmPyc8skSfo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "855139257879-i145ug18d5n4d0vfgj59636l6vnijimd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "855139257879-lreiq9j1a8070p009eh0ub37r76p4dga.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "ooo.loop.passenger"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

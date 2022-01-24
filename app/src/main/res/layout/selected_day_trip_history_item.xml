@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        app:cardElevation="0dp"
+        android:elevation="0dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:cardBackgroundColor="#ffffff">
+
+        <LinearLayout
+            android:id="@+id/tripItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="@dimen/_10sdp"
+                app:cardElevation="0dp"
+                android:elevation="0dp"
+                app:cardCornerRadius="@dimen/_8sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_gravity="center"
+                    android:src="@mipmap/ic_no_pic_user"
+                    android:layout_width="@dimen/_55sdp"
+                    android:layout_height="@dimen/_55sdp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_margin="@dimen/_10sdp"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+
+                <com.view.MTextView
+                    android:id="@+id/nameTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="start"
+                    android:text="John Davis"
+                    android:textAlignment="viewStart"
+                    android:textColor="#141414"
+                    app:customTypeFace="@string/systemMediumFont"
+                    android:textSize="@dimen/_13ssp" />
+
+                <com.view.MTextView
+                    android:visibility="gone"
+                    android:id="@+id/timeTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="start"
+                    android:text="10:25PM"
+                    android:textAlignment="viewStart"
+                    android:textColor="#2F2F2F"
+                    android:textSize="@dimen/txt_size_16" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/typeArea"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:elevation="0dp"
+                    app:cardBackgroundColor="@color/appThemeColor_1"
+                    app:cardCornerRadius="@dimen/_8sdp"
+                    app:cardElevation="0dp">
+
+                <!--
+                                        android:id="@+id/etypeTxt"
+                -->
+
+                <com.view.MTextView
+                    android:id="@+id/typeTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:ellipsize="marquee"
+                    android:gravity="center"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:text="Taxi Booking"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/_8ssp" />
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_gravity="center"
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:layout_height="wrap_content">
+                <com.view.MTextView
+                    android:id="@+id/fareTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="start|center"
+                    android:text="$10"
+                    android:textAlignment="viewStart"
+                    android:textColor="#000000"
+                    app:customTypeFace="@string/systemSemiBold"
+                    android:textSize="@dimen/_16ssp" />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/arrowImgView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="0"
+                android:src="@mipmap/ic_arrow_right"
+                android:tint="@color/black" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/seperateLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#C9C9C9"
+        android:visibility="gone" />
+</LinearLayout>

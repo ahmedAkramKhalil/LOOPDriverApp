@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f4"
+    android:orientation="vertical">
+
+
+    <include
+        android:id="@+id/toolbar_include"
+        layout="@layout/design_toolbar_general" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/contentArea"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="20dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_icon"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@mipmap/ic_menu_subscription"
+                            android:tint="@color/appThemeColor_1" />
+
+                    </LinearLayout>
+
+                    <com.view.MTextView
+                        android:id="@+id/subscriptionDesTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/txt_size_16"
+                        android:textStyle="bold"
+                        app:customTypeFace="@string/robotolightFont" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@color/white"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/all_btn_height2"
+                            android:layout_marginTop="2dp">
+
+                            <com.view.MTextView
+                                android:id="@+id/planNameHTxt"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="0.75"
+                                android:clickable="false"
+                                android:ellipsize="end"
+                                android:gravity="start|center_vertical"
+                                android:maxLines="1"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/appThemeColor_1"
+                                android:textSize="@dimen/txt_size_14"
+                                app:customTypeFace="@string/robotobold" />
+
+
+                            <com.view.MTextView
+                                android:id="@+id/planNameTxt"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:clickable="false"
+                                android:ellipsize="end"
+                                android:gravity="start|center_vertical"
+                                android:maxLines="1"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/appThemeColor_1"
+                                android:textSize="@dimen/txt_size_14"
+                                app:customTypeFace="@string/robotobold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/all_btn_height2"
+                            android:layout_marginTop="2dp">
+
+                            <com.view.MTextView
+                                android:id="@+id/planPriceHTxt"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="0.75"
+                                android:clickable="false"
+                                android:ellipsize="end"
+                                android:gravity="start|center_vertical"
+                                android:maxLines="1"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/appThemeColor_1"
+                                android:textSize="@dimen/txt_size_14"
+                                app:customTypeFace="@string/robotobold" />
+
+
+                            <com.view.MTextView
+                                android:id="@+id/planPriceTxt"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:clickable="false"
+                                android:ellipsize="end"
+                                android:gravity="start|center_vertical"
+                                android:maxLines="1"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/appThemeColor_1"
+                                android:textSize="@dimen/txt_size_14"
+                                app:customTypeFace="@string/robotobold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/walletArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="15dp"
+                        app:cardBackgroundColor="#ffffff"
+                        app:cardElevation="3dp"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="28dp"
+                                        android:layout_height="28dp"
+                                        android:layout_gravity="center"
+                                        android:gravity="center">
+
+                                        <FrameLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:gravity="center">
+
+
+                                            <androidx.appcompat.widget.AppCompatCheckBox
+                                                android:id="@+id/cb_wallet"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="top|center"
+
+                                                android:theme="@style/MyCheckBox" />
+
+                                            <LinearLayout
+                                                android:layout_width="18dp"
+                                                android:layout_height="18dp"
+                                                android:layout_gravity="center"
+                                                android:background="@drawable/rect_rounded_corner"
+                                                android:gravity="center"
+                                                android:visibility="gone">
+
+                                                <ImageView
+                                                    android:id="@+id/iv_wallet"
+                                                    android:layout_width="15dp"
+                                                    android:layout_height="15dp"
+                                                    android:src="@mipmap/ic_correct"
+                                                    android:tint="@color/white"
+                                                    android:visibility="gone" />
+                                            </LinearLayout>
+
+
+                                        </FrameLayout>
+
+                                    </LinearLayout>
+
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <com.view.MTextView
+                                            android:id="@+id/walletBalanceTxt"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="2dp"
+                                            android:layout_weight="1"
+                                            android:clickable="false"
+                                            android:ellipsize="end"
+                                            android:gravity="start|center_vertical"
+                                            android:maxLines="1"
+                                            android:text=""
+                                            android:textAlignment="viewStart"
+                                            android:textColor="@color/appThemeColor_1"
+                                            android:textSize="@dimen/txt_size_16"
+                                            app:customTypeFace="roboto_light" />
+
+                                        <com.view.MTextView
+                                            android:id="@+id/walletBalanceValTxt"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="2dp"
+                                            android:layout_weight="1"
+                                            android:clickable="false"
+                                            android:ellipsize="end"
+                                            android:gravity="start|center_vertical"
+                                            android:maxLines="1"
+                                            android:text=""
+                                            android:textAlignment="viewStart"
+                                            android:textColor="#757575"
+                                            android:textSize="@dimen/txt_size_14"
+                                            app:customTypeFace="roboto_light" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:visibility="gone"
+                        android:id="@+id/cardArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="15dp"
+                        app:cardBackgroundColor="#ffffff"
+                        app:cardElevation="3dp"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:layout_marginStart="10dp"
+                                    android:orientation="horizontal">
+
+
+                                    <LinearLayout
+                                        android:layout_width="28dp"
+                                        android:layout_height="28dp"
+                                        android:layout_gravity="center"
+                                        android:gravity="center">
+
+                                        <RadioButton
+                                            android:id="@+id/cardPaymentRadioBtn"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+
+                                            android:checked="false"
+                                            android:gravity="center"
+                                            android:textColor="@color/appThemeColor_1"
+                                            android:theme="@style/MyCheckBox" />
+
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.view.MTextView
+                                            android:id="@+id/cardPaymentTxt"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="2dp"
+                                            android:layout_weight="1"
+                                            android:clickable="false"
+                                            android:ellipsize="end"
+                                            android:gravity="start|center_vertical"
+                                            android:maxLines="1"
+                                            android:text=""
+                                            android:textAlignment="viewStart"
+                                            android:textColor="@color/appThemeColor_1"
+                                            android:textSize="@dimen/txt_size_16"
+                                            app:customTypeFace="roboto_light" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:id="@+id/noteArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="15dp"
+                        android:gravity="start|center"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:textAlignment="viewStart">
+
+                        <com.view.MTextView
+                            android:id="@+id/noteText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center|top"
+                            android:gravity="start|center|top"
+                            android:text=""
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/txt_size_12" />
+
+                        <com.view.MTextView
+                            android:visibility="gone"
+                            android:id="@+id/noteDetailsText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center"
+                            android:layout_marginStart="5dp"
+                            android:gravity="start|center"
+                            android:text=""
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/txt_size_12" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/paymentWebViewArea"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <WebView
+                    android:id="@+id/paymentWebview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:visibility="gone"></WebView>
+
+                <com.view.anim.loader.AVLoadingIndicatorView
+                    android:id="@+id/loaderView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="15dp"
+                    android:background="@android:color/transparent"
+                    android:visibility="gone"
+                    app:indicator="BallSpinFadeLoader"
+                    app:indicator_color="#000000" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+    <com.view.MTextView
+        android:id="@+id/subScribeBtnTxt"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/all_btn_height"
+        android:layout_gravity="center"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/txt_size_16"
+        android:textStyle="bold"
+        app:customTypeFace="@string/robotolightFont" />
+
+</LinearLayout>

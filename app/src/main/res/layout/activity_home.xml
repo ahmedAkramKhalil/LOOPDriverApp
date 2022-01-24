@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <FrameLayout
+        android:id="@+id/fragContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:id="@+id/rduTopArea"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_55sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="#f1f1f1"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/homeArea"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/home_img"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:clickable="false"
+                android:focusable="false"
+                android:tint="@color/homedeSelectColor"
+                app:srcCompat="@drawable/ic_home" />
+
+            <com.view.MTextView
+                android:id="@+id/homeTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:clickable="false"
+                android:focusable="false"
+                android:maxLines="4"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/homedeSelectColor"
+                android:textSize="@dimen/_8sdp"
+                app:customTypeFace="@string/systemMediumFont" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/earningArea"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/earnImg"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:clickable="false"
+                android:focusable="false"
+                android:tint="@color/homedeSelectColor"
+                app:srcCompat="@drawable/ic_home" />
+
+            <com.view.MTextView
+                android:id="@+id/earnIngTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:clickable="false"
+                android:focusable="false"
+                android:maxLines="4"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/homedeSelectColor"
+                android:textSize="@dimen/_8sdp"
+                app:customTypeFace="@string/systemMediumFont" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/SeetingArea"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/settingImg"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:clickable="false"
+                android:focusable="false"
+
+                android:tint="@color/homedeSelectColor"
+                app:srcCompat="@drawable/ic_profile" />
+
+            <com.view.MTextView
+                android:id="@+id/settingTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:clickable="false"
+                android:focusable="false"
+                android:maxLines="4"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/homedeSelectColor"
+                android:textSize="@dimen/_8sdp"
+                app:customTypeFace="@string/systemMediumFont" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/profileArea"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/profileImg"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:clickable="false"
+                android:focusable="false"
+                android:tint="@color/homedeSelectColor"
+                app:srcCompat="@drawable/ic_profile" />
+
+            <com.view.MTextView
+                android:id="@+id/profileTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:clickable="false"
+                android:focusable="false"
+                android:maxLines="4"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/homedeSelectColor"
+                android:textSize="@dimen/_8sdp"
+                app:customTypeFace="@string/systemMediumFont" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

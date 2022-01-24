@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/_8sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/topView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+
+                android:id="@+id/cancel"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="end"
+                android:layout_margin="@dimen/_8sdp"
+                app:srcCompat="@drawable/ic_clear"/>
+
+
+            <ImageView
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_40sdp"
+                app:srcCompat="@drawable/ic_automobile" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="-20dp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+
+            <com.view.MTextView
+                android:id="@+id/VehiclesTitleTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:text="Select Your Vehicles"
+                android:textColor="#1C1C1C"
+                android:textSize="@dimen/_17ssp"
+                app:customTypeFace="@string/systemSemiBold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+
+                android:layout_weight="3">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/vehiclesRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:scrollbars="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_weight="0"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <com.view.MTextView
+                    android:id="@+id/mangeVehiclesTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/border"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:singleLine="true"
+                    android:text="MANAGE "
+                    android:textAllCaps="true"
+                    android:textColor="@color/appThemeColor_1"
+                    android:textSize="@dimen/txt_size_16"
+                    app:customTypeFace="@string/systemMediumFont" />
+
+                <com.view.MTextView
+                    android:id="@+id/addVehiclesTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_border"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:singleLine="true"
+                    android:text="ADD NEW"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/txt_size_16"
+                    app:customTypeFace="@string/systemMediumFont" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

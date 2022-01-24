@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_20sdp"
+    android:layout_marginEnd="@dimen/_20sdp"
+    android:orientation="horizontal">
+
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_2sdp"
+        android:minHeight="@dimen/_50sdp"
+        app:cardCornerRadius="@dimen/_12sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="top|center"
+                android:layout_weight="1"
+                android:gravity="top|center"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|center"
+                    android:gravity="top|center"
+                    android:scrollbars="none">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+<!--                        <com.view.MTextView-->
+<!--                            android:id="@+id/nameTxt"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_alignParentTop="true"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_marginTop="@dimen/_5sdp"-->
+<!--                            android:gravity="center"-->
+<!--                            android:includeFontPadding="false"-->
+<!--                            android:text=""-->
+<!--                            android:textAlignment="center"-->
+<!--                            android:textColor="#323232"-->
+<!--                            android:textSize="@dimen/txt_size_16"-->
+<!--                            android:visibility="gone" />-->
+
+                        <com.view.MTextView
+                            android:id="@+id/addressTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/nameTxt"
+                            android:layout_gravity="start|center"
+                            android:ellipsize="end"
+                            android:gravity="start|center"
+                            android:includeFontPadding="false"
+                            android:maxLines="5"
+                            android:padding="@dimen/_10sdp"
+
+                            android:text=""
+                            android:textAlignment="viewStart"
+
+
+                            android:textColor="#141414"
+                            android:textSize="@dimen/_11ssp"
+                            app:customTypeFace="@string/systemRegular" />
+
+
+                    </RelativeLayout>
+                </ScrollView>
+            </LinearLayout>
+
+
+            <!--search view-->
+            <LinearLayout
+                android:id="@+id/destLocSearchArea"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="#FFFFFF"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0"
+                    android:src="@mipmap/ic_search" />
+
+                <com.view.MTextView
+                    android:id="@+id/placeTxtView"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:ellipsize="end"
+                    android:gravity="start|center_vertical"
+                    android:maxLines="1"
+                    android:textColor="#1C1C1C"
+                    android:textSize="@dimen/txt_size_16"
+                    app:customTypeFace="@string/systemRegular" />
+
+            </LinearLayout>
+
+            <!-- <com.view.MTextView
+                 android:id="@+id/addressTxt"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center_vertical"
+                 android:layout_weight="0.6"
+                 android:gravity="start"
+                 android:maxHeight="100dp"
+                 android:padding="10dp"
+                 android:text=""
+                 android:textColor="#323232"
+                 android:textSize="@dimen/txt_size_16" />-->
+
+            <LinearLayout
+                android:id="@+id/navigateArea"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/navStripImgView"
+                    android:layout_width="23.5dp"
+                    android:layout_height="100dp"
+                    android:src="@mipmap/ic_navigate_left_strip"
+                    android:tint="@color/appThemeColor_2" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/appThemeColor_2"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:id="@+id/ll_nav"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/navArrowImgView"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/ic_loc"
+                            android:tint="@color/appThemeColor_TXT_2" />
+
+                        <com.view.MTextView
+                            android:id="@+id/navigateTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/navArrowImgView"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="6dp"
+                            android:text="Navigate"
+                            android:textColor="@color/appThemeColor_TXT_2"
+                            android:textSize="@dimen/txt_size_14" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

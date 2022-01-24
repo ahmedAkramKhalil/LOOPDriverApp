@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    tools:context=".TripRatingActivity">
+
+    <include
+        android:id="@+id/toolbar_include"
+        layout="@layout/design_toolbar_general"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:isScrollContainer="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/mapArea"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="false">
+
+
+                <fragment
+
+
+                    android:id="@+id/mapV2"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/ratingArea"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#D9F3F3F3"
+                android:orientation="vertical">
+
+                <com.view.MTextView
+                    android:id="@+id/rateTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:maxLines="1"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="15dp"
+                    android:text="Rate"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/appThemeColor_1"
+                    android:textSize="@dimen/txt_size_18"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/nameTxt">
+
+                    <ImageView
+                        android:layout_width="@dimen/_130sdp"
+                        android:layout_height="@dimen/_130sdp"
+                        android:layout_centerInParent="true"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/round_shape_rating"
+                        android:tint="#cecece" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="@dimen/_150sdp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/round_shape_rating"
+                        android:tint="#E2E2E2" />
+
+
+                    <com.view.SelectableRoundedImageView
+                        android:id="@+id/userImgView"
+
+                        android:layout_width="@dimen/_105sdp"
+                        android:layout_height="@dimen/_105sdp"
+                        android:layout_centerInParent="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:scaleType="centerCrop"
+                        app:sriv_left_bottom_corner_radius="20dip"
+                        app:sriv_left_top_corner_radius="20dip"
+                        app:sriv_oval="true"
+                        app:sriv_right_bottom_corner_radius="20dip"
+                        app:sriv_right_top_corner_radius="20dip" />
+                </RelativeLayout>
+
+
+                <com.view.MTextView
+                    android:id="@+id/nameTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/ratingBar"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="start|center_vertical"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:text="NAME"
+                    android:textAlignment="center"
+                    android:textColor="@color/appThemeColor_2"
+                    android:textSize="@dimen/_15ssp"
+                    app:customTypeFace="@string/systemSemiBold" />
+
+
+                <RelativeLayout
+
+
+                    android:id="@+id/commentArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_above="@+id/btnArea"
+                    android:layout_margin="@dimen/_20sdp">
+
+
+                    <com.view.editBox.MaterialEditText
+                        android:id="@+id/commentBox"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100sdp"
+                        android:textAlignment="viewStart"
+                        android:textColor="#757575"
+                        android:textSize="@dimen/_13ssp"
+                        app:customTypeFace="@string/systemLightFont" />
+                </RelativeLayout>
+
+
+                <!--<RatingBar-->
+                <!--android:id="@+id/ratingBar"-->
+                <!--style="?attr/ratingBarStyle"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:layout_marginBottom="20dp"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:numStars="5"-->
+                <!--android:progressTint="@color/appThemeColor_1"-->
+                <!--/>-->
+                <!--style="@style/RatingBar"-->
+                <com.view.simpleratingbar.SimpleRatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/commentArea"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:backgroundTint="@color/gray_holo_light"
+                    android:padding="2dp"
+                    app:SRB_fillColor="#fab00a"
+                    app:SRB_starBackgroundColor="@color/gray_holo_light"
+                    app:SRB_starSize="40sp"
+                    app:SRB_stepSize="0.5" />
+
+
+                <LinearLayout
+                    android:id="@+id/btnArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_10sdp">
+
+                    <include
+                        android:id="@+id/btn_type2"
+                        layout="@layout/btn_type_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/all_btn_height" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <com.view.MTextView
+                android:id="@+id/pageTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:gravity="start|center_vertical"
+                android:maxLines="1"
+                android:paddingStart="@dimen/_30sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:text=""
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_21ssp"
+                android:visibility="visible"
+                app:customTypeFace="@string/systemSemiBold" />
+
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

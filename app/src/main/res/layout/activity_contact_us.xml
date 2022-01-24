@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F1F1"
+    tools:context=".ContactUsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar_include"
+            layout="@layout/design_toolbar_general" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_25sdp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="@dimen/_90sdp"
+                    android:layout_gravity="center_horizontal"
+                    app:srcCompat="@drawable/ic_contacus" />
+
+                <com.view.MTextView
+                    android:id="@+id/subheaderTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="@dimen/_18ssp"
+                    app:customTypeFace="@string/systemSemiBold" />
+
+                <com.view.MTextView
+                    android:id="@+id/detailTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:text=""
+                    android:textColor="@color/eme_txt_color"
+                    android:textSize="@dimen/_12ssp"
+                    app:customTypeFace="@string/systemRegular" />
+
+                <com.view.MTextView
+                    android:textAlignment="viewStart"
+                    android:id="@+id/floatingLabel1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text=""
+                    android:textColor="#181818"
+                    android:textSize="@dimen/_11ssp"
+                    app:customTypeFace="@string/systemLightFont" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/square_border_common"
+                    android:minHeight="@dimen/_35sdp">
+
+                    <com.view.editBox.MaterialEditText
+                        android:id="@+id/subjectBox"
+                        layout="@layout/editbox_form_design"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:textColor="#757575"
+                        android:textSize="@dimen/_13ssp"
+                        app:met_accentTypeface="@string/defaultFont"
+                        app:met_typeface="@string/defaultFont" />
+
+                </RelativeLayout>
+
+                <com.view.MTextView
+                    android:visibility="invisible"
+                    android:id="@+id/subjectBox_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/_10ssp"
+                    app:customTypeFace="@string/systemLightFont" />
+
+                <com.view.MTextView
+                    android:id="@+id/floatingLabel2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text=""
+                    android:textColor="#181818"
+                    android:textSize="@dimen/_11ssp"
+                    app:customTypeFace="@string/systemLightFont" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_70sdp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/square_border_common">
+
+                    <com.view.editBox.MaterialEditText
+                        android:fontFamily="@string/systemLightFont"
+                        android:id="@+id/contentBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="viewStart"
+                        android:textColor="#757575"
+                        android:textSize="@dimen/_13ssp"
+                        app:met_accentTypeface="@string/defaultFont"
+                        app:met_typeface="@string/defaultFont"  />
+
+                </RelativeLayout>
+
+                <com.view.MTextView
+                    android:visibility="invisible"
+                    android:id="@+id/contentBox_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/_10ssp"
+                    app:customTypeFace="@string/systemLightFont" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_30sdp">
+
+                    <include
+                        android:id="@+id/btn_type2"
+                        layout="@layout/btn_type_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/all_btn_height" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</RelativeLayout>

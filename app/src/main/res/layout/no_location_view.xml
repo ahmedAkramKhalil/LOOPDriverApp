@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/appThemeColor_TXT_1"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.view.MTextView
+        android:id="@+id/noLocTitleTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:paddingBottom="5dp"
+        tools:text="noLocTitleTxt"
+        android:textColor="#1C1C1C"
+        app:customTypeFace="@string/systemSemiBold"
+        android:textSize="@dimen/_16ssp" />
+
+    <com.view.MTextView
+        android:id="@+id/noLocMesageTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center|start"
+        android:paddingBottom="5dp"
+        tools:text="noLocMesageTxt"
+        android:textColor="#6b6b66"
+        app:customTypeFace="@string/systemRegular"
+        android:textSize="@dimen/_12ssp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#E3E3E3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.view.MTextView
+                android:padding="@dimen/_4sdp"
+                android:id="@+id/settingBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                app:customTypeFace="@string/systemMediumFont"
+                android:layout_weight="1"
+                android:gravity="center"
+                tools:text="Settings"
+                android:textColor="#557855"
+                android:textSize="@dimen/_16ssp" />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="wrap_content"
+                android:background="#E3E3E3" />
+
+            <com.view.MTextView
+                android:padding="@dimen/_4sdp"
+                app:customTypeFace="@string/systemMediumFont"
+                android:id="@+id/RetryBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_weight="1"
+                android:gravity="center"
+                tools:text="Retry"
+                android:textColor="#1C1C1C"
+                android:textSize="@dimen/_16ssp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

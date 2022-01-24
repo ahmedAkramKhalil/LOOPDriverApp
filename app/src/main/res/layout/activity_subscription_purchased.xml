@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_view"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar_include"
+        layout="@layout/design_toolbar_general" />
+
+<!--    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/appThemeColor_TXT_1" />-->
+
+    <com.view.MTextView
+        android:layout_below="@+id/toolbar_include"
+        android:id="@+id/tv_tap_anywhere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="top|center"
+        android:layout_margin="8dp"
+        android:text="Tap anywhere"
+        android:textColor="@color/appThemeColor_TXT_2"
+        android:textSize="@dimen/txt_size_14"
+        android:visibility="visible"
+        app:customTypeFace="@string/robotolightFont" />
+
+
+    <LinearLayout
+        android:id="@+id/contentArea"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_marginBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/circle_shape_area"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_button"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:src="@drawable/ic_checked_circle"
+                android:tint="@color/white" />
+
+            <com.view.MTextView
+                android:id="@+id/thanksTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Thank You"
+                android:textColor="@color/appThemeColor_TXT_1"
+                android:textSize="@dimen/txt_size_20"
+                app:customTypeFace="@string/robotomediumFont" />
+        </LinearLayout>
+
+
+        <com.view.MTextView
+            android:layout_marginTop="25dp"
+            android:id="@+id/subscribedTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:gravity="center"
+            android:text="Subscribed Successfully.Enjoy your subscription."
+            app:customTypeFace="@string/robotolightFont"
+            android:textColor="@color/appThemeColor_TXT_2"
+            android:textSize="@dimen/txt_size_14"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</RelativeLayout>

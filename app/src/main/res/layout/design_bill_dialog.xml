@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.view.MTextView
+            android:id="@+id/submitDetailHTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Submit Details"
+            android:textColor="#000000"
+            app:customTypeFace="@string/robotomediumFont"
+            android:textSize="@dimen/txt_size_18" />
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:id="@+id/ll_order_deliver_Area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.view.MTextView
+                    android:id="@+id/billValueHTxt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:text="Bill Value"
+                    app:customTypeFace="@string/robotolightFont"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/txt_size_14" />
+
+                <com.view.MTextView
+                    android:textColor="@color/textColor"
+                    android:id="@+id/billValueCTxt"
+                    android:textSize="@dimen/txt_size_16"
+                    app:customTypeFace="@string/robotomediumFont"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+                <include
+                    android:id="@+id/billValueEditText"
+                    layout="@layout/editbox_form_design"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="5dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.view.MTextView
+                    android:id="@+id/confirmBillHTxt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:text="Confirm Bill Value"
+                    app:customTypeFace="@string/robotolightFont"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/txt_size_14" />
+
+                <com.view.MTextView
+                    android:text="$"
+                    android:textColor="@color/textColor"
+                    android:id="@+id/confirmBillCTxt"
+                    android:textSize="@dimen/txt_size_16"
+                    app:customTypeFace="@string/robotomediumFont"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+                <include
+                    android:id="@+id/confirmBillValueEditText"
+                    layout="@layout/editbox_form_design"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <com.view.MTextView
+                    android:id="@+id/paidHTxtView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="0.5"
+                    android:text="Paid"
+                    app:customTypeFace="@string/robotolightFont"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/txt_size_14" />
+
+                <com.view.MTextView
+                    android:textColor="@color/textColor"
+                    android:id="@+id/paidBillCTxt"
+                    android:textSize="@dimen/txt_size_16"
+                    android:text="$"
+                    app:customTypeFace="@string/robotomediumFont"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+                <include
+                    android:id="@+id/paidValueEditText"
+                    layout="@layout/editbox_form_design"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:id="@+id/ll_order_collect_Area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.view.MTextView
+                    android:id="@+id/billCollectedHTxt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:text="Bill Value"
+                    android:textColor="#2F2F2F"
+                    android:textSize="@dimen/txt_size_16" />
+
+                <com.view.MTextView
+                    android:textColor="@color/textColor"
+                    android:id="@+id/billCollectedCTxt"
+                    android:textSize="@dimen/txt_size_16"
+                    app:customTypeFace="@string/robotomediumFont"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+                <include
+                    android:id="@+id/billCollecetdValueEditText"
+                    layout="@layout/editbox_form_design"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="5dp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="20dp"
+            android:background="#2F2F2F" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <com.view.MTextView
+                android:id="@+id/cancelHTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="15dp"
+                android:text="Cancel"
+                android:textAllCaps="true"
+                app:customTypeFace="@string/robotomediumFont"
+                android:textColor="#999999"
+                android:textSize="@dimen/txt_size_15" />
+
+            <com.view.MTextView
+                android:id="@+id/confirmHTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="15dp"
+                android:text="Confirm"
+                app:customTypeFace="@string/robotomediumFont"
+                android:textColor="#161718"
+                android:textAllCaps="true"
+                android:textSize="@dimen/txt_size_15" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

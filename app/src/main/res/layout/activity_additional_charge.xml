@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar_include"
+        layout="@layout/design_toolbar_general" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/addtionalchargearea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_5sdp">
+
+                        <com.view.MTextView
+                            android:id="@+id/currentchargeHTxt"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="1"
+                            android:gravity="start|center"
+                            android:text="Fare"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/appThemeColor_1"
+                            app:customTypeFace="@string/systemMediumFont"
+                            android:textSize="@dimen/txt_size_16" />
+
+                        <com.view.MTextView
+                            app:customTypeFace="@string/systemRegular"
+                            android:id="@+id/currentchargeVTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="end|center"
+                            android:paddingEnd="13dp"
+                            android:text="$"
+                            android:textColor="@color/appThemeColor_1"
+                            android:textSize="@dimen/txt_size_16" />
+
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="end"
+                            android:layout_weight="0"
+                            android:src="@mipmap/ic_edit"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="40dp"
+                        android:orientation="horizontal"
+                        android:paddingEnd="15dp"
+                        android:paddingStart="15dp">
+
+                        <com.view.MTextView
+                            app:customTypeFace="@string/systemMediumFont"
+                            android:id="@+id/matrialfeeHTxt"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="start|center"
+                            android:text="Fare"
+                            android:textAlignment="viewStart"
+                            android:textColor="#292929"
+                            android:textSize="@dimen/txt_size_16" />
+
+                        <com.view.MTextView
+                            android:id="@+id/matrialfeeSTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:gravity="start|center"
+                            android:textAlignment="viewStart"
+                            android:textColor="#292929"
+                            android:textSize="@dimen/txt_size_16" />
+
+                        <com.view.MTextView
+                            app:customTypeFace="@string/systemRegular"
+                            android:id="@+id/matrialfeeCurrancyTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="0"
+                            android:gravity="center"
+                            android:text="$"
+                            android:textAlignment="center"
+                            android:textColor="#292929"
+                            android:textSize="@dimen/txt_size_16" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="0">
+
+                            <include
+                                android:id="@+id/timatrialfeeVTxt"
+                                layout="@layout/editbox_form_design_payment"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical" />
+                        </LinearLayout>
+
+                        <ImageView
+
+                            android:id="@+id/matrialeditImgView"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="end"
+                            android:layout_weight="0"
+                            android:src="@mipmap/ic_edit"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:minHeight="40dp"
+                        android:orientation="horizontal"
+                        android:paddingEnd="15dp"
+                        android:paddingStart="15dp">
+
+                        <com.view.MTextView
+                            app:customTypeFace="@string/systemMediumFont"
+                            android:id="@+id/miscfeeHTxt"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="start|center"
+                            android:text="Fare"
+                            android:textAlignment="viewStart"
+                            android:textColor="#292929"
+                            android:textSize="@dimen/txt_size_16" />
+
+                        <com.view.MTextView
+                            android:id="@+id/miscfeeSTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:gravity="start|center"
+                            android:textAlignment="viewStart"
+                            android:textColor="#292929"
+                            android:textSize="@dimen/txt_size_16" />
+
+                        <com.view.MTextView
+                            app:customTypeFace="@string/systemRegular"
+                            android:id="@+id/miscfeeCurrancyTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="0"
+                            android:gravity="center_vertical"
+                            android:text="$"
+                            android:textColor="#292929"
+                            android:textSize="@dimen/txt_size_16" />
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0"
+                            android:gravity="center">
+
+                            <include
+                                android:id="@+id/miscfeeVTxt"
+                                layout="@layout/editbox_form_design_payment"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/miseeditImgView"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="end"
+                            android:layout_weight="0"
+                            android:src="@mipmap/ic_edit"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:minHeight="40dp"
+                        android:orientation="horizontal"
+                        android:paddingEnd="15dp"
+                        android:paddingStart="15dp">
+
+                        <com.view.MTextView
+                            app:customTypeFace="@string/systemMediumFont"
+                            android:id="@+id/discountHTxt"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="start|center"
+                            android:text="Fare"
+                            android:textAlignment="viewStart"
+                            android:textColor="#292929"
+                            android:textSize="@dimen/txt_size_16" />
+
+                        <com.view.MTextView
+                            app:customTypeFace="@string/systemRegular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:gravity="start|center"
+                            android:text="-"
+                            android:textAlignment="viewStart"
+                            android:textColor="#292929"
+                            android:textSize="@dimen/txt_size_16" />
+
+                        <com.view.MTextView
+                            android:id="@+id/discountSTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:gravity="start|center"
+                            android:textAlignment="viewStart"
+                            android:textColor="#292929"
+                            android:textSize="@dimen/txt_size_16" />
+
+                        <com.view.MTextView
+                            app:customTypeFace="@string/systemRegular"
+                            android:id="@+id/discountCurrancyTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="0"
+                            android:gravity="start|center"
+                            android:text="$"
+                            android:textAlignment="viewStart"
+                            android:textColor="#292929"
+                            android:textSize="@dimen/txt_size_16" />
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0"
+                            android:gravity="center">
+
+                            <include
+                                android:id="@+id/discountVTxt"
+                                layout="@layout/editbox_form_design_payment"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <ImageView
+
+                            android:id="@+id/discounteditImgView"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="end"
+                            android:layout_weight="0"
+                            android:clickable="true"
+                            app:srcCompat="@mipmap/ic_edit"
+                            android:visibility="gone" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <com.view.DividerView
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layerType="software"
+                    android:src="@drawable/dotted" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <com.view.MTextView
+                        android:id="@+id/finalHTxt"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:gravity="start|center"
+                        android:text="Fare"
+                        android:textAlignment="viewStart"
+                        android:textColor="#292929"
+                        android:textSize="@dimen/txt_size_16"
+                        app:customTypeFace="@string/systemBold" />
+
+                    <com.view.MTextView
+                        android:id="@+id/finalvalTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:gravity="start"
+                        android:singleLine="true"
+                        android:text="$0.0"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/appThemeColor_1"
+                        android:textSize="@dimen/_18ssp"
+                        app:customTypeFace="@string/systemBold" />
+
+                </LinearLayout>
+
+
+                <com.view.MTextView
+                    android:id="@+id/noteLbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_weight="1"
+                    android:gravity="center|start"
+                    android:text="Note:-"
+                    android:textAlignment="textStart"
+                    android:textColor="#FF0000"
+                    app:customTypeFace="@string/systemRegular"
+                    android:textSize="@dimen/txt_size_16" />
+
+                <com.view.MTextView
+                    app:customTypeFace="@string/systemRegular"
+                    android:id="@+id/noteTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_weight="1"
+                    android:gravity="center|start"
+                    android:text="would you like to add addtional charge and discount ?"
+                    android:textAlignment="textStart"
+                    android:textColor="#777777"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:background="@color/appThemeColor_1"
+        android:orientation="horizontal">
+
+
+        <include
+            android:id="@+id/skipBtn"
+            layout="@layout/btn_type_1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/all_btn_height"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="0"
+            android:background="#dedede" />
+
+        <include
+            android:id="@+id/submitBtn"
+            layout="@layout/btn_type_1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/all_btn_height"
+            android:layout_weight="1" />
+    </LinearLayout>
+</LinearLayout>

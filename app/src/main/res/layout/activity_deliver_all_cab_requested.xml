@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#333333"
+    android:orientation="vertical"
+    tools:context=".deliverAll.DeliverAllCabRequestedActivity">
+
+    <ImageView
+        android:visibility="visible"
+        android:id="@+id/backImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/bg_home" />
+
+    <include
+        android:id="@+id/toolbar_include"
+        layout="@layout/design_toolbar_main" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <com.view.MTextView
+                    android:id="@+id/requestType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:text=""
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/txt_size_20"
+                    android:textStyle="bold"
+                    app:customTypeFace="@string/robotolightFont" />
+
+
+                <FrameLayout
+                    android:id="@+id/progressLayout_frame"
+                    android:layout_width="260dp"
+                    android:layout_height="260dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:foregroundGravity="center"
+                    android:visibility="gone">
+
+
+                    <RelativeLayout
+                        android:id="@+id/progressLayout"
+                        android:layout_width="260dp"
+                        android:layout_height="260dp"
+                        android:background="@android:color/transparent"
+                        android:clickable="true">
+
+                        <ProgressBar
+                            android:id="@+id/progressbar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="260dp"
+                            android:layout_height="260dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/circle_shape"
+                            android:progressDrawable="@drawable/circular_progress_bar" />
+
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <FrameLayout
+
+                    android:layout_width="250dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:foregroundGravity="center"
+                    android:visibility="visible">
+
+
+                    <RelativeLayout
+                        android:id="@+id/requestTimerArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:clickable="true">
+
+
+                        <com.view.MTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/ufxtimer_border"
+                            android:gravity="center" />
+
+                        <com.view.MTextView
+                            android:id="@+id/tvTimeCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:text="00:00"
+                            android:textColor="#FFFFFF"
+                            android:textSize="50sp"
+                            app:customTypeFace="@string/robotolightFont" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <com.view.MTextView
+                    android:id="@+id/hintTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/txt_size_16"
+                    android:visibility="visible"
+                    app:customTypeFace="@string/robotolightFont" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <com.view.MTextView
+                        android:id="@+id/locationAddressHintTxt"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/appThemeColor_1"
+                        android:textSize="@dimen/txt_size_18"
+                        android:visibility="visible"
+                        app:customTypeFace="@string/robotomediumFont" />
+
+                    <com.view.MTextView
+                        android:id="@+id/locationAddressTxt"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:textColor="@color/appThemeColor_TXT_1"
+                        android:textSize="@dimen/txt_size_16"
+                        android:visibility="visible"
+                        app:customTypeFace="@string/robotolightFont" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.view.MTextView
+                        android:id="@+id/destAddressHintTxt"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/appThemeColor_1"
+                        android:textSize="@dimen/txt_size_18"
+                        app:customTypeFace="@string/robotomediumFont" />
+
+                    <com.view.MTextView
+                        android:id="@+id/destAddressTxt"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:textColor="@color/appThemeColor_TXT_1"
+                        android:textSize="@dimen/txt_size_16"
+                        app:customTypeFace="@string/robotolightFont" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.view.MTextView
+                        android:id="@+id/restaurantAddressHintTxt"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/appThemeColor_1"
+                        android:textSize="@dimen/txt_size_18"
+                        app:customTypeFace="@string/robotomediumFont" />
+
+                    <com.view.MTextView
+                        android:id="@+id/restaurantAddressTxt"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:textColor="@color/appThemeColor_TXT_1"
+                        android:textSize="@dimen/txt_size_16"
+                        app:customTypeFace="@string/robotolightFont" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="vertical">
+
+                    <com.view.MTextView
+                        android:id="@+id/specialHintTxt"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:textColor="@color/appThemeColor_1"
+                        android:textSize="@dimen/txt_size_18"
+                        android:visibility="gone"
+                        app:customTypeFace="@string/robotomediumFont" />
+
+                    <com.view.MTextView
+                        android:id="@+id/specialValTxt"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:textColor="@color/appThemeColor_TXT_1"
+                        android:textSize="@dimen/txt_size_16"
+                        android:visibility="gone"
+                        app:customTypeFace="@string/robotolightFont" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="0"
+        android:background="#4B4B4B" />
+
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/passengerDetailArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+
+        <com.view.simpleratingbar.SimpleRatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/gray_holo_light"
+            android:gravity="start|center"
+            android:padding="2dp"
+            app:SRB_fillColor="@color/appThemeColor_1"
+            app:SRB_isIndicator="true"
+            app:SRB_numberOfStars="5"
+            app:SRB_stepSize="0.5"
+            app:SRB_starBackgroundColor="@color/gray_holo_light"
+            app:SRB_starSize="29sp" />
+
+        <com.view.MTextView
+            android:id="@+id/pNameTxtView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center"
+            android:layout_weight="1"
+            android:gravity="end|center"
+            android:text="sd"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/appThemeColor_TXT_1"
+            android:textSize="@dimen/txt_size_18" />
+    </LinearLayout>
+
+
+</LinearLayout>
+

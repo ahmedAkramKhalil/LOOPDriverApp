@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_45sdp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_gravity="start|center"
+        app:cardBackgroundColor="#239707"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:visibility="gone"
+            android:id="@+id/lottieAnim"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_gravity="start|center"
+            app:lottie_autoPlay="false"
+            android:tint="@color/white"
+            app:lottie_fileName="check.json"
+            app:lottie_loop="true" />
+
+        <FrameLayout
+            android:background="@android:color/transparent"
+            android:id="@+id/frmView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:visibility="visible"
+                android:orientation="horizontal"
+                android:id="@+id/slideLayout"
+                android:background="#239707"
+                android:layout_width="match_parent"
+                android:gravity="center|start"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:gravity="center|start"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_gravity="center|start"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:tint="#F3F3F3"
+                        android:layout_width="@dimen/_20sdp"
+                        app:srcCompat="@drawable/ic_fast_forward_double_right_arrows"
+                        android:layout_height="@dimen/_20sdp" />
+
+                    <com.view.MTextView
+                        android:id="@+id/btnText"
+                        android:text="Slide to begin trip"
+                        android:textSize="@dimen/_17ssp"
+                        android:maxLines="1"
+                        app:customTypeFace="@string/systemRegular"
+                        android:textColor="#ffffff"
+                        android:layout_gravity="center_vertical"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_minus45sdp"
+                        android:layout_width="match_parent"
+                        android:enabled="false"
+                        android:clickable="false"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/nonclickable"
+                    android:layout_marginStart="@dimen/_160sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

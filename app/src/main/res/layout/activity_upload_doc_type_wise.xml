@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e8e8e8"
+    android:orientation="vertical"
+    tools:context="com.taxifgo.driver.UploadDocTypeWiseActivity">
+
+    <include
+        android:id="@+id/toolbar_include"
+        layout="@layout/design_toolbar_general" />
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_10sdp"
+        android:id="@+id/rideArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_6sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.view.MTextView
+                    app:customTypeFace="@string/systemMediumFont"
+                    android:id="@+id/ridetitleTxt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:gravity="start|center_vertical"
+                    android:minHeight="30dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="#141414"
+                    android:textSize="@dimen/_13ssp" />
+
+                <ImageView
+                    android:id="@+id/imagearrow"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_weight="0"
+                    android:src="@mipmap/ic_arrow_right"
+                    android:tint="#9f9f9f" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/deliverArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_6sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.view.MTextView
+                    app:customTypeFace="@string/systemMediumFont"
+                    android:id="@+id/deliverytitleTxt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:gravity="start|center_vertical"
+                    android:minHeight="30dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="#141414"
+                    android:textSize="@dimen/_13ssp" />
+
+                <ImageView
+                    android:id="@+id/delimagearrow"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_weight="0"
+                    android:src="@mipmap/ic_arrow_right"
+                    android:tint="#9f9f9f" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/uberxArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_6sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.view.MTextView
+                    app:customTypeFace="@string/systemMediumFont"
+                    android:id="@+id/uberxtitleTxt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:gravity="start|center_vertical"
+                    android:minHeight="30dp"
+                    android:textAlignment="viewStart"
+                    android:textColor="#141414"
+                    android:textSize="@dimen/_13ssp" />
+
+                <ImageView
+                    android:id="@+id/uberximagearrow"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_weight="0"
+                    android:src="@mipmap/ic_arrow_right"
+                    android:tint="#9f9f9f" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/detailsArea"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/titleArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <com.view.MTextView
+                android:id="@+id/titleHTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center|start"
+                android:textColor="@color/appThemeColor_1"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/_12ssp"
+                app:customTypeFace="@string/systemRegular"
+                 />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/recipientNameArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/_35sdp"
+            android:orientation="horizontal">
+
+            <com.view.MTextView
+                android:id="@+id/rNameTxt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="0.4"
+                android:gravity="center|start"
+                android:text=""
+                android:textColor="#343434"
+                app:customTypeFace="@string/systemRegular"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/_11ssp"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.view.MTextView
+                        android:id="@+id/rNameVTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center|start"
+                        android:textAlignment="viewStart"
+                        android:text=""
+                        android:textColor="#000000"
+                        android:gravity="center|start"
+                        app:customTypeFace="@string/systemRegular"
+                        android:textSize="@dimen/_11ssp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <View
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#eaeaea" />
+        <LinearLayout
+            android:id="@+id/recipientNoArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/_35sdp"
+            android:orientation="horizontal">
+
+            <com.view.MTextView
+                android:id="@+id/rNoTxt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="0.4"
+                android:gravity="center|start"
+                android:text=""
+                android:textColor="#343434"
+                app:customTypeFace="@string/systemRegular"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/_11ssp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.view.MTextView
+                        android:id="@+id/rNoVTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center|start"
+                        android:textAlignment="viewStart"
+                        android:text=""
+                        android:textColor="#000000"
+                        android:gravity="center|start"
+                        app:customTypeFace="@string/systemRegular"
+                        android:textSize="@dimen/_11ssp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <View
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#eaeaea" />
+        <LinearLayout
+            android:id="@+id/recipientFrAddArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/_35sdp"
+            android:orientation="horizontal">
+
+            <com.view.MTextView
+                android:id="@+id/rFrAddTxt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="0.4"
+                android:gravity="center|start"
+                android:text=""
+                android:textColor="#343434"
+                app:customTypeFace="@string/systemRegular"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/_11ssp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.view.MTextView
+                        android:id="@+id/rFrAddVTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center|start"
+                        android:textAlignment="viewStart"
+                        android:text=""
+                        android:textColor="#000000"
+                        android:gravity="center|start"
+                        app:customTypeFace="@string/systemRegular"
+                        android:textSize="@dimen/_11ssp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <View
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#eaeaea" />
+        <LinearLayout
+            android:id="@+id/recipientToAddArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/_35sdp"
+            android:orientation="horizontal">
+
+            <com.view.MTextView
+                android:id="@+id/rToAddTxt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="0.4"
+                android:gravity="center|start"
+                android:text=""
+                android:textColor="#343434"
+                app:customTypeFace="@string/systemRegular"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/_11ssp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.view.MTextView
+                        android:id="@+id/rToAddVTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center|start"
+                        android:textAlignment="viewStart"
+                        android:text=""
+                        android:textColor="#000000"
+                        android:gravity="center|start"
+                        app:customTypeFace="@string/systemRegular"
+                        android:textSize="@dimen/_11ssp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/otherDetailArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/deliveryDetailsArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/line"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#E3E3E3"
+            android:visibility="gone" />
+    </LinearLayout>
+    <View
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/line2"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#E3E3E3"
+        android:visibility="gone" />
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/recipientotherDetailArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+
+        <com.view.MTextView
+            android:id="@+id/HTxt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.4"
+            android:gravity="center|start"
+            android:text=""
+            android:textColor="#343434"
+            app:customTypeFace="@string/systemSemiBold"
+            android:textAlignment="viewStart"
+            android:textSize="@dimen/_11ssp"
+             />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.view.MTextView
+                    android:id="@+id/VTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center|start"
+                    android:textAlignment="viewStart"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:gravity="center|start"
+                    app:customTypeFace="@string/systemRegular"
+                    android:textSize="@dimen/_11ssp" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

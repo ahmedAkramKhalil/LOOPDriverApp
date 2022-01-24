@@ -1,0 +1,1309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appThemeColor_1"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar_include"
+        layout="@layout/design_toolbar_general" />
+
+    <RelativeLayout
+        android:id="@+id/rootRelView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--main area-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--map-->
+            <fragment
+                android:id="@+id/mapV2"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_above="@+id/btnarea" />
+
+            <!--ufx view-->
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scrollview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/btnarea"
+                android:background="#f1f1f1"
+                android:fillViewport="true"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/timerarea"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/tripStartBtnArea"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/appThemeColor_1"
+                        android:minHeight="@dimen/_90sdp"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/_10sdp">
+
+                        <com.view.SelectableRoundedImageView
+                            android:id="@+id/user_img"
+                            android:layout_width="@dimen/_65sdp"
+                            android:layout_height="@dimen/_65sdp"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:padding="1dp"
+                            app:sriv_border_color="@color/white"
+                            app:sriv_border_width="2dip"
+                            app:sriv_left_bottom_corner_radius="20dip"
+                            app:sriv_left_top_corner_radius="20dip"
+                            app:sriv_oval="true"
+                            app:sriv_right_bottom_corner_radius="20dip"
+                            app:sriv_right_top_corner_radius="20dip" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:orientation="vertical">
+
+                            <com.view.MTextView
+                                android:id="@+id/userNameTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start|center_vertical"
+                                android:gravity="start|center"
+                                android:maxLines="1"
+                                android:text=""
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14ssp"
+                                android:textStyle="bold"
+                                app:customTypeFace="@string/systemSemiBold" />
+
+                            <com.view.MTextView
+                                android:id="@+id/userAddressTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start|center_vertical"
+                                android:gravity="start|center"
+                                android:text=""
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_12ssp"
+                                android:textStyle="normal"
+                                app:customTypeFace="@string/systemRegular" />
+                            <!--666666-->
+
+
+                            <com.view.simpleratingbar.SimpleRatingBar
+                                android:id="@+id/ratingBar_ufx"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:backgroundTint="@color/gray_holo_light"
+                                android:padding="2dp"
+                                app:SRB_fillColor="@color/ratingfill"
+                                app:SRB_isIndicator="true"
+                                app:SRB_numberOfStars="5"
+                                app:SRB_starBackgroundColor="@color/gray_holo_light"
+                                app:SRB_starSize="19sp"
+                                app:SRB_stepSize="0.5" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/pointImg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-1dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/bottom_strip_repeat"
+                        android:tint="#E4E4E4"
+                        android:visibility="gone" />
+
+                    <RelativeLayout
+                        android:id="@+id/timerlayoutMainarea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <View
+
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:background="@color/appThemeColor_1" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            app:cardCornerRadius="@dimen/_12sdp">
+
+                            <LinearLayout
+                                android:id="@+id/timerlayoutarea"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="visible">
+
+                                <com.view.MTextView
+                                    android:id="@+id/timerHinttext"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start|center_vertical"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:gravity="center"
+                                    android:inputType="textCapSentences"
+                                    android:maxLines="1"
+                                    android:text=""
+                                    android:textColor="#141414"
+                                    android:textSize="@dimen/_16ssp"
+                                    android:textStyle="bold"
+                                    app:customTypeFace="@string/systemSemiBold" />
+
+                                <View
+                                    android:id="@+id/seperationLine"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0.5dp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:background="#DADADA"
+                                    android:visibility="gone" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:visibility="visible">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:paddingBottom="@dimen/_10sdp">
+
+                                        <com.view.MTextView
+                                            android:id="@+id/txtTimerHour"
+                                            android:layout_width="@dimen/_50sdp"
+                                            android:layout_height="@dimen/_50sdp"
+                                            android:layout_centerHorizontal="true"
+                                            android:layout_weight="3"
+                                            android:background="@drawable/rect_rounded_corner"
+                                            android:gravity="center"
+                                            android:text="00"
+                                            android:textAppearance="?android:attr/textAppearanceLarge"
+                                            android:textColor="@android:color/white"
+                                            android:textSize="@dimen/_33ssp"
+                                            app:customTypeFace="@string/systemMediumFont" />
+
+                                        <com.view.MTextView
+                                            android:id="@+id/txt_TimerHour"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/txtTimerHour"
+                                            android:layout_marginTop="@dimen/_5sdp"
+                                            android:layout_weight="1"
+                                            android:gravity="center_horizontal"
+                                            android:text="Hour"
+                                            android:textAllCaps="true"
+                                            android:textAppearance="?android:attr/textAppearanceSmall"
+                                            android:textColor="#969696"
+                                            app:customTypeFace="@string/systemRegular" />
+
+                                        <com.view.MTextView
+                                            android:id="@+id/textView"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:text=":"
+                                            android:textColor="@android:color/black"
+                                            android:textSize="@dimen/_30ssp"
+                                            android:textStyle="bold" />
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:paddingBottom="@dimen/_10sdp">
+
+                                        <com.view.MTextView
+                                            android:id="@+id/txtTimerMinute"
+                                            android:layout_width="@dimen/_50sdp"
+                                            android:layout_height="@dimen/_50sdp"
+                                            android:layout_centerHorizontal="true"
+                                            android:layout_weight="3"
+                                            android:background="@drawable/rect_rounded_corner"
+                                            android:gravity="center"
+                                            android:text="00"
+                                            android:textAppearance="?android:attr/textAppearanceLarge"
+                                            android:textColor="@android:color/white"
+                                            android:textSize="@dimen/_33ssp"
+                                            app:customTypeFace="@string/systemMediumFont" />
+
+                                        <com.view.MTextView
+                                            android:id="@+id/txt_TimerMinute"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/txtTimerMinute"
+                                            android:layout_marginTop="@dimen/_5sdp"
+                                            android:layout_weight="1"
+                                            android:gravity="center_horizontal"
+                                            android:text="Minute"
+                                            android:textAllCaps="true"
+                                            android:textAppearance="?android:attr/textAppearanceSmall"
+                                            android:textColor="#969696"
+                                            app:customTypeFace="@string/systemRegular" />
+
+                                        <com.view.MTextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:text=":"
+                                            android:textColor="@android:color/black"
+                                            android:textSize="@dimen/_30ssp"
+                                            android:textStyle="bold" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:paddingBottom="@dimen/_10sdp">
+
+                                        <com.view.MTextView
+                                            android:id="@+id/txtTimerSecond"
+                                            android:layout_width="@dimen/_50sdp"
+                                            android:layout_height="@dimen/_50sdp"
+                                            android:layout_centerHorizontal="true"
+                                            android:layout_weight="3"
+                                            android:background="@drawable/rect_rounded_corner"
+                                            android:gravity="center"
+                                            android:text="00"
+                                            android:textAppearance="?android:attr/textAppearanceLarge"
+                                            android:textColor="@android:color/white"
+                                            android:textSize="@dimen/_33ssp"
+                                            app:customTypeFace="@string/systemMediumFont" />
+
+                                        <com.view.MTextView
+                                            android:id="@+id/txt_TimerSecond"
+                                            android:layout_width="fill_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/txtTimerSecond"
+                                            android:layout_marginTop="@dimen/_5sdp"
+                                            android:layout_weight="1"
+                                            android:gravity="center_horizontal"
+                                            android:text="Minute"
+                                            android:textAllCaps="true"
+                                            android:textAppearance="?android:attr/textAppearanceSmall"
+                                            android:textColor="#969696"
+                                            app:customTypeFace="@string/systemRegular" />
+
+                                    </RelativeLayout>
+
+                                    <!-- <LinearLayout
+                                         android:layout_width="wrap_content"
+                                         android:layout_height="wrap_content"
+                                         android:layout_weight="1"
+                                         android:gravity="center"
+                                         android:orientation="vertical">
+
+
+                                         <LinearLayout
+                                             android:layout_width="match_parent"
+                                             android:layout_height="wrap_content"
+                                             android:minHeight="@dimen/_50sdp"
+                                             android:orientation="horizontal">
+
+                                             <com.view.MTextView
+                                                 android:id="@+id/txtTimerHour"
+                                                 android:layout_width="@dimen/_50sdp"
+                                                 android:layout_height="@dimen/_50sdp"
+                                                 android:layout_weight="3"
+                                                 android:background="@drawable/rect_rounded_corner"
+                                                 android:gravity="center"
+                                                 android:text="00"
+                                                 app:customTypeFace="@string/systemMediumFont"
+                                                 android:textAppearance="?android:attr/textAppearanceLarge"
+                                                 android:textColor="@android:color/white"
+                                                 android:textSize="@dimen/_33ssp" />
+
+                                            &lt;!&ndash; <com.view.MTextView
+                                                 android:id="@+id/textView"
+                                                 android:layout_width="wrap_content"
+                                                 android:layout_height="wrap_content"
+                                                 android:text=":"
+                                                 android:textColor="@android:color/black"
+                                                 android:textSize="50dp" />&ndash;&gt;
+                                         </LinearLayout>
+
+                                         <com.view.MTextView
+                                             android:id="@+id/txt_TimerHour"
+                                             android:layout_width="fill_parent"
+                                             android:layout_height="wrap_content"
+                                             android:layout_weight="1"
+                                             android:gravity="center_horizontal"
+                                             android:text="Hour"
+                                             android:textAllCaps="true"
+                                             app:customTypeFace="@string/systemRegular"
+                                             android:textAppearance="?android:attr/textAppearanceSmall"
+                                             android:textColor="#969696" />
+                                     </LinearLayout>
+
+
+                                     <LinearLayout
+                                         android:layout_width="wrap_content"
+                                         android:layout_height="wrap_content"
+                                         android:layout_weight="1"
+                                         android:gravity="center"
+                                         android:orientation="vertical">
+
+                                         <LinearLayout
+                                             android:minHeight="@dimen/_50sdp"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="wrap_content">
+
+                                             <com.view.MTextView
+                                                 android:id="@+id/txtTimerMinute"
+                                                 android:layout_width="@dimen/_50sdp"
+                                                 android:layout_height="@dimen/_50sdp"
+                                                 android:layout_weight="3"
+                                                 android:background="@drawable/rect_rounded_corner"
+                                                 android:gravity="center"
+                                                 android:text="00"
+                                                 app:customTypeFace="@string/systemMediumFont"
+                                                 android:textAppearance="?android:attr/textAppearanceLarge"
+                                                 android:textColor="@android:color/white"
+                                                 android:textSize="@dimen/_33ssp" />
+
+                                          &lt;!&ndash;   <com.view.MTextView
+
+                                                 android:layout_width="wrap_content"
+                                                 android:layout_height="wrap_content"
+                                                 android:text=":"
+                                                 android:textColor="@android:color/black"
+                                                 android:textSize="50dp" />&ndash;&gt;
+                                         </LinearLayout>
+
+                                         <com.view.MTextView
+                                             android:id="@+id/txt_TimerMinute"
+                                             android:layout_width="fill_parent"
+                                             android:layout_height="wrap_content"
+                                             android:layout_weight="1"
+                                             android:gravity="center_horizontal"
+                                             android:text="Minute"
+                                             android:textAllCaps="true"
+                                             app:customTypeFace="@string/systemRegular"
+                                             android:textAppearance="?android:attr/textAppearanceSmall"
+                                             android:textColor="#969696" />
+                                     </LinearLayout>
+
+
+                                     <LinearLayout
+                                         android:layout_width="wrap_content"
+                                         android:layout_height="wrap_content"
+                                         android:layout_weight="1"
+                                         android:gravity="center"
+                                         android:orientation="vertical">
+
+                                         <LinearLayout
+                                             android:minHeight="@dimen/_50sdp"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="wrap_content">
+                                             <com.view.MTextView
+                                                 android:id="@+id/txtTimerSecond"
+                                                 android:layout_width="@dimen/_50sdp"
+                                                 android:layout_height="@dimen/_50sdp"
+                                                 android:layout_weight="3"
+                                                 android:background="@drawable/rect_rounded_corner"
+                                                 android:gravity="center"
+                                                 android:text="00"
+                                                 app:customTypeFace="@string/systemMediumFont"
+                                                 android:textAppearance="?android:attr/textAppearanceLarge"
+                                                 android:textColor="@android:color/white"
+                                                 android:textSize="@dimen/_33ssp" />
+                                         </LinearLayout>
+                                         <com.view.MTextView
+                                             android:id="@+id/txt_TimerSecond"
+                                             android:layout_width="fill_parent"
+                                             android:layout_height="wrap_content"
+                                             android:layout_weight="1"
+                                             android:gravity="center_horizontal"
+                                             android:text="Minute"
+                                             android:textAllCaps="true"
+                                             app:customTypeFace="@string/systemRegular"
+                                             android:textAppearance="?android:attr/textAppearanceSmall"
+                                             android:textColor="#969696" />
+
+                                     </LinearLayout>-->
+
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </RelativeLayout>
+
+
+                    <com.view.MTextView
+                        android:id="@+id/btn_timer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:background="@drawable/pauseborder"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingStart="@dimen/_30sdp"
+                        android:paddingTop="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_30sdp"
+                        android:paddingBottom="@dimen/_10sdp"
+                        android:text="Pause"
+                        android:textAllCaps="true"
+                        android:textColor="@color/appThemeColor_1"
+                        android:textSize="@dimen/_14ssp"
+                        android:visibility="gone"
+                        app:customTypeFace="@string/systemMediumFont" />
+
+                    <View
+                        android:id="@+id/seperationLine2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginTop="20dp"
+                        android:background="#DADADA"
+                        android:visibility="gone" />
+
+                    <com.view.MTextView
+                        android:id="@+id/progressHinttext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_25sdp"
+                        android:maxLines="1"
+
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_17ssp"
+                        app:customTypeFace="@string/systemSemiBold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+
+                        android:id="@+id/onGoingTripsDetailListRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:background="#f1f1f1"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="#f1f1f1" />
+                </LinearLayout>
+
+
+            </androidx.core.widget.NestedScrollView>
+
+            <!--user view-->
+            <LinearLayout
+                android:id="@+id/deliveryDetailsArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/buttonlayouts"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center|bottom"
+                    android:gravity="center">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/detailsCard"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="@dimen/_23sdp"
+                            android:layout_marginBottom="@dimen/_minus10sdp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="@dimen/_12sdp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:paddingBottom="@dimen/_10sdp">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/_30sdp"
+                                            android:layout_marginTop="@dimen/_10sdp"
+                                            android:layout_marginEnd="@dimen/_90sdp"
+                                            android:layout_marginBottom="@dimen/_10sdp"
+                                            android:orientation="vertical">
+
+                                            <com.view.MTextView
+                                                android:id="@+id/pickupTxt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="@dimen/_minus12sdp"
+                                                android:inputType="textCapWords"
+                                                android:text="dfgdfgd"
+                                                android:textColor="#141414"
+                                                android:textSize="@dimen/_13ssp"
+                                                android:visibility="gone"
+                                                app:customTypeFace="@string/systemSemiBold"
+                                                tools:text="Drop Off" />
+
+                                            <com.view.MTextView
+                                                android:id="@+id/pickupNameTxt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/_12sdp"
+                                                android:ellipsize="end"
+                                                android:includeFontPadding="false"
+                                                android:maxLines="2"
+                                                android:textColor="#141414"
+                                                android:textSize="@dimen/_13ssp"
+                                                android:visibility="visible"
+                                                app:customTypeFace="@string/systemSemiBold"
+                                                tools:text="User" />
+
+                                            <com.view.simpleratingbar.SimpleRatingBar
+                                                android:id="@+id/ratingBar"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:visibility="gone"
+                                                app:SRB_fillColor="@color/ratingfill"
+                                                app:SRB_isIndicator="true"
+                                                app:SRB_numberOfStars="5"
+                                                app:SRB_starBackgroundColor="#c9c9c9"
+                                                app:SRB_starSize="@dimen/_10ssp"
+                                                app:SRB_starsSeparation="0dp"
+                                                app:SRB_stepSize="0.5" />
+
+                                            <com.view.MTextView
+                                                android:id="@+id/recipientTxt"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="dfgdfgd"
+                                                android:textColor="#a4a4a4"
+                                                android:textSize="@dimen/_8ssp"
+                                                android:visibility="gone"
+                                                app:customTypeFace="@string/systemRegular" />
+
+                                        </LinearLayout>
+
+                                        <com.view.MTextView
+                                            android:id="@+id/distanceTxt"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="@dimen/_34sdp"
+                                            android:layout_marginEnd="@dimen/_20sdp"
+                                            android:gravity="center"
+                                            android:includeFontPadding="false"
+                                            android:minWidth="@dimen/_65sdp"
+                                            android:textColor="#161616"
+                                            android:textSize="@dimen/_15ssp"
+                                            app:customTypeFace="@string/systemRegular"
+                                            tools:text="0.8 Mi" />
+
+                                        <com.view.MTextView
+                                            android:id="@+id/timeTxt"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/distanceTxt"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_gravity="center"
+                                            android:layout_marginEnd="@dimen/_20sdp"
+                                            android:layout_marginBottom="@dimen/_5sdp"
+                                            android:gravity="center"
+                                            android:minWidth="@dimen/_65sdp"
+                                            android:textColor="#a4a4a4"
+                                            android:textSize="@dimen/_8ssp"
+                                            app:customTypeFace="@string/systemRegular"
+                                            tools:text="7 min" />
+
+                                        <com.view.MTextView
+                                            android:id="@+id/tollTxtView"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/timeTxt"
+                                            android:layout_marginBottom="@dimen/_10sdp"
+                                            android:background="@color/appThemeColor_TXT_2"
+                                            android:ellipsize="end"
+                                            android:gravity="start|center_vertical"
+                                            android:includeFontPadding="false"
+                                            android:paddingStart="@dimen/_10sdp"
+                                            android:paddingTop="@dimen/_2sdp"
+                                            android:paddingEnd="@dimen/_10sdp"
+                                            android:paddingBottom="@dimen/_2sdp"
+                                            android:text=""
+                                            android:textColor="@color/black"
+                                            android:textSize="@dimen/txt_size_12"
+                                            android:visibility="gone"
+                                            app:customTypeFace="@string/systemMediumFont" />
+
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <com.view.MTextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center_vertical"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="7dp"
+                            android:gravity="start"
+                            android:text="PICKUP"
+                            android:textColor="#ffa524"
+                            android:textSize="@dimen/txt_size_14" />
+
+                        <com.view.MTextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center_vertical"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:gravity="start"
+                            android:text="BENJIE"
+                            android:textColor="@color/appThemeColor_TXT_1"
+                            android:textSize="@dimen/txt_size_18" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/totalPersonArea"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="end|center"
+                        android:gravity="end|center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <com.view.MTextView
+                            android:id="@+id/personTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="10dp"
+                            android:gravity="start"
+                            android:text="PICKUP"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/txt_size_16"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/iv_callRicipient"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center"
+                                android:src="@mipmap/ic_eme_banner"
+                                android:textSize="@dimen/txt_size_18"
+                                android:tint="#FFFFFF" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!--floating buttons-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:id="@+id/callview"
+                            android:layout_width="@dimen/_50sdp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:background="@drawable/circle_shadow_big">
+
+                            <ImageView
+                                android:id="@+id/callArea"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                android:padding="@dimen/_10sdp"
+                                android:tint="@color/white"
+                                app:srcCompat="@drawable/ic_telephone" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/chatview"
+                            android:layout_width="@dimen/_50sdp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:background="@drawable/circle_shadow_big">
+
+                            <ImageView
+                                android:id="@+id/chatArea"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                android:padding="@dimen/_10sdp"
+                                android:tint="@color/white"
+                                app:srcCompat="@drawable/ic_chat_option" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/navigateArea"
+                            android:layout_width="@dimen/_50sdp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:background="@drawable/circle_shadow_big">
+
+                            <ImageView
+                                android:id="@+id/navigateAreaUP"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                android:padding="@dimen/_10sdp"
+                                android:rotation="-45"
+                                android:tint="@color/white"
+                                app:srcCompat="@drawable/ic_navigation" />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/dropAllArea"
+                            android:layout_width="@dimen/_50sdp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:background="@drawable/circle_shadow_big"
+                            android:visibility="gone">
+
+
+                            <ImageView
+                                android:id="@+id/dropAllAreaUP"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:padding="@dimen/_10sdp"
+                                android:src="@drawable/ic_multi_drop_nw"
+                                android:tint="@color/white" />
+
+                            <ImageView
+                                android:id="@+id/dropCancel"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:src="@mipmap/ic_close_icon_"
+                                android:tint="@color/white"
+                                android:visibility="gone" />
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/buttonlayouts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <!--start end trip slide button-->
+
+                <com.general.files.SlideButton
+                    android:id="@+id/startTripSlideButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_gravity="bottom"
+                    android:textAllCaps="true" />
+
+                <com.general.files.SlideButton
+                    android:id="@+id/endTripSlideButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:textAllCaps="true"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <!--slide not need now-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:visibility="gone">
+
+                <FrameLayout
+                    android:id="@+id/bottomArea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center">
+
+                    <View
+                        android:id="@+id/slideback"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginStart="5dp"
+                        android:background="@color/appThemeColor_2"
+                        android:clickable="false"
+                        android:scaleType="centerInside"
+                        android:src="@mipmap/ic_trip_btn" />
+
+                    <ImageView
+                        android:id="@+id/imageslide"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:clickable="false"
+                        android:scaleType="centerInside"
+                        android:src="@mipmap/ic_trip_start"
+                        android:tint="@color/white" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <!--error view-->
+            <LinearLayout
+                android:id="@+id/errorLocArea"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ProgressBar
+                    android:id="@+id/mProgressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="-5dp"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/appThemeColor_TXT_1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="15dp"
+                        android:src="@android:drawable/stat_notify_error"
+                        android:tint="#d74933" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <com.view.MTextView
+                            android:id="@+id/errorTitleTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/btnarea"
+                            android:layout_alignParentEnd="true"
+                            android:gravity="start|center"
+                            android:text=""
+                            android:textAlignment="viewStart"
+                            android:textSize="@dimen/txt_size_16"
+                            android:tint="@color/appThemeColor_Accent" />
+
+                        <com.view.MTextView
+                            android:id="@+id/errorSubTitleTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/btnarea"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="start|center"
+                            android:text=""
+                            android:textAlignment="viewStart"
+                            android:textSize="@dimen/txt_size_12"
+                            android:tint="@color/appThemeColor_Accent" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--google image-->
+            <ImageView
+                android:id="@+id/googleImage"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_above="@+id/btnarea"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="10dp"
+                android:src="@mipmap/ic_google_logo"
+                android:visibility="gone" />
+
+            <!--time text-->
+            <LinearLayout
+                android:id="@+id/area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/navArrowImgView"
+                android:orientation="vertical">
+
+                <com.view.MTextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="start"
+                    android:background="#272727"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text=""
+                    android:textColor="@color/appThemeColor_TXT_2"
+                    android:textSize="@dimen/txt_size_16"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+            <!--show detail-->
+
+            <!--user trip-->
+            <ImageView
+                android:id="@+id/userTapImgView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/area"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="25dp"
+                android:clickable="true"
+                android:src="@mipmap/ic_user_ins"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <!--card area-->
+        <RelativeLayout
+            android:id="@+id/navigationViewArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <View
+
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:background="@color/appThemeColor_1" />
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include
+                    android:id="@+id/toolbar_include"
+                    layout="@layout/navigation_view" />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <!--emergency-->
+        <ImageView
+            android:id="@+id/emeTapImgView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/navigationViewArea"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:src="@mipmap/ic_eme_alert"
+            android:tint="@color/red" />
+
+        <RelativeLayout
+            android:id="@+id/deliveryInfoView"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_below="@id/navigationViewArea"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+
+            android:background="@drawable/circle_shadow_big"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/ic_view_detail_icon"
+                android:tint="@color/black" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/detailIconArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/navigationViewArea"
+
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:visibility="gone">
+
+            <com.view.SelectableRoundedImageView
+                android:id="@+id/driverImgView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="start|center"
+                android:background="@color/appThemeColor_2"
+                android:scaleType="centerCrop"
+                app:sriv_border_color="@color/appThemeColor_2"
+                app:sriv_border_width="2dip"
+                app:sriv_left_bottom_corner_radius="50dip"
+                app:sriv_left_top_corner_radius="50dip"
+                app:sriv_oval="false"
+                app:sriv_right_bottom_corner_radius="50dip"
+                app:sriv_right_top_corner_radius="50dip" />
+
+            <ImageView
+                android:id="@+id/viewDetailsImgView"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:src="@mipmap/ic_view_detail_icon"
+                android:tint="@color/appThemeColor_TXT_1" />
+        </RelativeLayout>
+
+        <!--WayBill-->
+
+        <!--delivery detail-->
+
+        <!--hold area-->
+        <LinearLayout
+
+            android:id="@+id/holdWaitArea"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_below="@id/navigationViewArea"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_minus15sdp"
+            android:background="@drawable/timerborder"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="3dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:orientation="horizontal"
+                    android:textAlignment="viewStart">
+
+                    <com.view.MTextView
+                        android:id="@+id/newtxtTimerHour"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="00"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/newtextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="2dp"
+                        android:paddingEnd="2dp"
+                        android:text=":"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
+
+                    <com.view.MTextView
+                        android:id="@+id/newtxtTimerMinute"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="00"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="2dp"
+                        android:paddingEnd="2dp"
+                        android:text=":"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
+
+                    <com.view.MTextView
+                        android:id="@+id/newtxtTimerSecond"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="00"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
+
+                    <com.view.MTextView
+                        android:id="@+id/newtxt_TimerSecond"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:text="Second"
+                        android:textAllCaps="true"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@android:color/black"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <com.view.MTextView
+                    android:id="@+id/newtxt_TimerHour"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Hour"
+                    android:textAllCaps="true"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@android:color/black"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <com.view.MTextView
+                android:id="@+id/newtxt_TimerMinute"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="Minute"
+                android:textAllCaps="true"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@android:color/black"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <!--wait button-->
+        <com.view.MTextView
+            android:id="@+id/newbtn_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/emeTapImgView"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/pauseborder"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingTop="@dimen/_4sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_4sdp"
+            android:textAllCaps="true"
+            android:textColor="@color/appThemeColor_1"
+            android:visibility="gone"
+            app:customTypeFace="@string/systemRegular" />
+
+    </RelativeLayout>
+
+</LinearLayout>

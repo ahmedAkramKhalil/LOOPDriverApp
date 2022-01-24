@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+
+        >
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/ic_tip"
+                android:tint="@color/appThemeColor_1" />
+
+            <com.view.MTextView
+                android:id="@+id/titileTxt"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_btn_height"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textColor="#000000"
+                android:textSize="@dimen/txt_size_16"
+                app:customTypeFace="@string/systemSemiBold" />
+
+            <com.view.MTextView
+                android:id="@+id/msgTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="@dimen/txt_size_14"
+                app:customTypeFace="@string/systemRegular" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_weight="0"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <com.view.MTextView
+                    android:id="@+id/skipTxtArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Cancel"
+                    android:textAllCaps="true"
+                    android:textColor="@color/appThemeColor_1"
+                    android:textSize="@dimen/txt_size_16"
+                    app:customTypeFace="@string/systemMediumFont" />
+
+                <com.view.MTextView
+                    android:id="@+id/addNowTxtArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_border"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="OK"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/txt_size_16"
+                    app:customTypeFace="@string/systemMediumFont" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

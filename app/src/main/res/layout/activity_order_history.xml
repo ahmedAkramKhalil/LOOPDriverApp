@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+
+    <include
+        android:id="@+id/toolbar_include"
+        layout="@layout/design_toolbar_general" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/containerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:orientation="horizontal"
+                android:paddingEnd="5dp"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp">
+
+                <include
+                    android:id="@+id/fromDateEditBox"
+                    layout="@layout/editbox_form_date_design"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1" />
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0" />
+
+                <include
+                    android:id="@+id/toDateEditBox"
+                    layout="@layout/editbox_form_date_design"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+
+            <!--<android.support.v7.widget.RecyclerView
+                android:id="@+id/historyRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="#F1F2F4"
+                android:padding="10dp" />-->
+
+            <LinearLayout
+                android:id="@+id/containView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="65dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp"
+                    android:weightSum="2">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <com.view.MTextView
+                            android:id="@+id/totalOrderHTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="#123456"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/txt_size_15"
+                            app:customTypeFace="roboto_medium" />
+
+                        <com.view.MTextView
+                            android:id="@+id/totalOrderVTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text=""
+                            android:textColor="@color/appThemeColor_1"
+                            android:textSize="@dimen/txt_size_22"
+                            app:customTypeFace="roboto_medium" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <com.view.MTextView
+                            android:id="@+id/earningFareHTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="#123456"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/txt_size_15"
+                            app:customTypeFace="roboto_medium" />
+
+                        <com.view.MTextView
+                            android:id="@+id/earningFareVTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text=""
+                            android:textColor="@color/appThemeColor_1"
+                            android:textSize="@dimen/txt_size_22"
+                            app:customTypeFace="roboto_medium" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/historyRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="#F1F2F4"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/loading_history"
+            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <com.view.MTextView
+            android:id="@+id/noOrdersTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="#1C1C1C"
+            android:textSize="@dimen/txt_size_16"
+            android:visibility="gone" />
+
+        <com.view.ErrorView
+            android:id="@+id/errorView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_100sdp"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/_82sdp"
+    android:maxHeight="@dimen/_120sdp"
+    android:id="@+id/llArea"
+    android:background="#f1f1f1"
+   >
+
+    <RelativeLayout
+        android:id="@+id/contentArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+      >
+
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/firstrowview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/leftSeperationLine"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="#BABABA" />
+
+            <View
+                android:id="@+id/rightSeperationLine"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="#BABABA" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/firstrowview"
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/leftSeperationLine2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="#BABABA" />
+
+            <View
+                android:id="@+id/rightSeperationLine2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="#BABABA" />
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/mainimagearea"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_centerHorizontal="true">
+
+            <FrameLayout
+                android:id="@+id/imagarea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+              >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.view.SelectableRoundedImageView
+                        android:id="@+id/carTypeImgView"
+                        android:layout_width="@dimen/_55sdp"
+                        android:layout_height="@dimen/_55sdp"
+                        android:scaleType="centerCrop"
+                        app:sriv_border_width="1dp"
+                        app:sriv_left_bottom_corner_radius="30dip"
+                        app:sriv_left_top_corner_radius="30dip"
+                        app:sriv_oval="true"
+                        app:sriv_right_bottom_corner_radius="30dip"
+                        app:sriv_right_top_corner_radius="30dip" />
+
+
+                </LinearLayout>
+
+
+                <com.view.anim.loader.AVLoadingIndicatorView
+                    android:id="@+id/loaderView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:visibility="gone"
+                    app:indicator="BallPulse"
+                    app:indicator_color="@color/appThemeColor_2" />
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/imagareaselcted"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.view.SelectableRoundedImageView
+                        android:id="@+id/carTypeImgViewselcted"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_centerHorizontal="true"
+                        android:scaleType="centerCrop"
+                        app:sriv_border_width="1dp"
+                        app:sriv_left_bottom_corner_radius="35dip"
+                        app:sriv_left_top_corner_radius="35dip"
+                        app:sriv_oval="true"
+                        app:sriv_right_bottom_corner_radius="35dip"
+                        app:sriv_right_top_corner_radius="35dip" />
+
+
+                </LinearLayout>
+
+
+                <com.view.anim.loader.AVLoadingIndicatorView
+                    android:id="@+id/loaderViewselected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:visibility="gone"
+                    app:indicator="BallPulse"
+                    app:indicator_color="@color/appThemeColor_2" />
+
+
+            </FrameLayout>
+        </RelativeLayout>
+
+        <com.view.MTextView
+            android:id="@+id/carTypeTitle"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mainimagearea"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="#000000"
+            android:textSize="@dimen/_13ssp"
+            app:customTypeFace="@string/systemSemiBold" />
+
+        <LinearLayout
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/carTypeTitle"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.view.MTextView
+                android:id="@+id/totalfare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text=""
+                android:textColor="#6d6d6d"
+                android:textSize="@dimen/_11ssp"
+                app:customTypeFace="@string/systemRegular"  />
+
+            <ImageView
+                android:id="@+id/infoimage"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginStart="5dp"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_information" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

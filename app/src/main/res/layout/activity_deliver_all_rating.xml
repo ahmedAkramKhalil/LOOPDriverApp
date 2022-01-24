@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+
+    <include
+        android:id="@+id/toolbar_include"
+        layout="@layout/design_toolbar_general" />
+
+    <ScrollView
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/ratingArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+            <View
+                android:layout_marginTop="0.7dp"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/disable_color" />
+
+            <com.view.MTextView
+                android:id="@+id/feedbackTxt"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_btn_height"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingEnd="15dp"
+                android:paddingStart="20dp"
+                android:text="FeedBack"
+                android:textAlignment="center"
+                android:textColor="@color/appThemeColor_2"
+                android:textSize="@dimen/txt_size_18"
+                app:customTypeFace="@string/robotomediumFont" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/disable_color" />
+
+            <ImageView
+                android:layout_margin="8dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_driver_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+
+            <com.view.MTextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/orderDeliveredTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|center_vertical"
+                android:maxLines="1"
+                android:paddingEnd="15dp"
+                android:paddingStart="20dp"
+                app:customTypeFace="@string/robotolightFont"
+                android:text="You just delivered an order."
+                android:textAlignment="center"
+                android:textColor="#272727"
+                android:textSize="@dimen/txt_size_16"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/disable_color" />
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:id="@+id/orderDetailArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.view.MTextView
+                    android:layout_gravity="center"
+                    app:customTypeFace="@string/robotomediumFont"
+                    android:id="@+id/nameTxt"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:text=""
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/appThemeColor_2"
+                    android:textSize="@dimen/txt_size_14"
+                    android:textStyle="bold" />
+
+                <com.view.MTextView
+                    android:layout_gravity="center"
+                    android:id="@+id/fareTxt"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="end|center_vertical"
+                    android:maxLines="1"
+                    android:text="$ 0"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/appThemeColor_2"
+                    android:textSize="@dimen/txt_size_14"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/disable_color" />
+
+            <com.view.MTextView
+                android:id="@+id/rateTxt"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/all_btn_height"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingEnd="15dp"
+                android:paddingStart="20dp"
+                android:text="FeedBack"
+                android:textAlignment="center"
+                android:textColor="@color/appThemeColor_2"
+                android:textSize="@dimen/txt_size_18"
+                app:customTypeFace="@string/robotomediumFont" />
+
+            <RelativeLayout
+                android:id="@+id/commentArea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:padding="5dp">
+
+                <include
+                    android:id="@+id/commentBox"
+                    layout="@layout/editbox_form_design"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp" />
+            </RelativeLayout>
+
+
+            <!--<RatingBar-->
+            <!--android:id="@+id/ratingBar"-->
+            <!--style="?attr/ratingBarStyle"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_marginBottom="20dp"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:numStars="5"-->
+            <!--android:progressTint="@color/appThemeColor_1"-->
+            <!--/>-->
+            <!--style="@style/RatingBar"-->
+            <com.view.simpleratingbar.SimpleRatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/gray_holo_light"
+                android:padding="2dp"
+                app:SRB_stepSize="0.5"
+                app:SRB_fillColor="@color/appThemeColor_2"
+                app:SRB_starBackgroundColor="@color/gray_holo_light"
+                app:SRB_starSize="40sp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <include
+            android:id="@+id/btn_type2"
+            layout="@layout/btn_type_2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/all_btn_height" />
+    </LinearLayout>
+
+</LinearLayout>

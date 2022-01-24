@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainArea"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ProgressBar
+        android:id="@+id/mProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-6dp"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/shadowView"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/below_shadow"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.view.MTextView
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:id="@+id/locationName"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imagarea"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:gravity="start|center"
+                    android:maxLines="4"
+                    android:minLines="1"
+                    tools:text="Title Title Title"
+                    android:textAllCaps="false"
+                    android:textColor="@color/appThemeColor_2"
+                    android:textSize="@dimen/_15ssp"
+                    app:customTypeFace="@string/systemSemiBold" />
+
+                <ImageView
+                    android:id="@+id/iv_close"
+                    android:layout_gravity="end"
+                    android:src="@mipmap/ic_close_icon_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+            <com.view.MTextView
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:id="@+id/remainingDestTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imagarea"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:gravity="start"
+                tools:text="desc desc desc desc desc desc desc"
+                android:textColor="@color/sourceAddressTxt"
+                android:textSize="@dimen/txt_size_14"
+                app:customTypeFace="roboto_light" />
+
+
+            <View
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:id="@+id/leftSeperationLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#BABABA" />
+
+            <com.view.MTextView
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:id="@+id/destDescriptionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                tools:text="destDescriptionText destDescriptionText destDescriptionText destDescriptionTextdestDescriptionText"
+                android:textColor="#D8909090"
+                android:textSize="@dimen/_11ssp"
+                app:customTypeFace="roboto_light" />
+
+            <com.general.files.SlideButton
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:id="@+id/slideButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+              />
+
+            <include
+                android:visibility="gone"
+                android:id="@+id/btn_type2"
+                layout="@layout/btn_type_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="bottom"
+              />
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:visibility="gone"
+            android:layout_gravity="end"
+            android:src="@mipmap/ic_close_icon_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
+</LinearLayout>

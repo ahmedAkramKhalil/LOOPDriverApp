@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".WorkLocationActivity">
+
+    <include
+        android:id="@+id/toolbar_include"
+        layout="@layout/design_toolbar_general" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nesScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/workLocationArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <com.view.MTextView
+                        android:id="@+id/workLocTitleTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_gravity="start|center_vertical"
+                        android:background="#f1f1f1"
+                        android:gravity="start|center_vertical"
+                        android:paddingStart="@dimen/_15sdp"
+                        android:paddingEnd="@dimen/_15sdp"
+                        android:text=""
+                        android:textAlignment="viewStart"
+                        android:textColor="#141414"
+                        android:textSize="@dimen/_14ssp"
+                        app:customTypeFace="@string/systemSemiBold" />
+
+
+                    <FrameLayout
+                        android:id="@+id/locWorkSelectArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true">
+
+                        <include
+                            android:id="@+id/locationWorkBox"
+                            layout="@layout/editbox_form_design"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="34dp" />
+
+                        <ImageView
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:layout_gravity="center_vertical|end"
+                            android:layout_marginEnd="5dp"
+                            android:gravity="center"
+                            android:src="@mipmap/ic_arrow_down" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:id="@+id/addressArea"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp">
+
+                        <com.view.MTextView
+                            android:id="@+id/addressTxt"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="start|center_vertical"
+                            android:maxLines="3"
+                            android:minHeight="20dp"
+                            android:textColor="#272727"
+                            android:textSize="@dimen/txt_size_14" />
+
+                        <ImageView
+                            android:id="@+id/editLocation"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0"
+                            android:src="@mipmap/ic_edit" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <CheckBox
+                        android:id="@+id/checkboxWork"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:buttonTint="@color/appThemeColor_1"
+                        android:textAlignment="viewStart"
+                        android:textColor="#272727"
+                        android:textSize="@dimen/txt_size_16"
+                        android:theme="@style/MyCheckBox"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/workradiusArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="vertical">
+
+                    <com.view.MTextView
+                        android:id="@+id/workradiusTitleTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_gravity="start|center_vertical"
+                        android:background="#f1f1f1"
+                        android:gravity="start|center_vertical"
+                        android:paddingStart="@dimen/_15sdp"
+                        android:paddingEnd="@dimen/_15sdp"
+                        android:text=""
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14ssp"
+                        app:customTypeFace="@string/systemSemiBold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <FrameLayout
+                            android:id="@+id/WorkradiusArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true">
+
+                            <include
+                                android:id="@+id/radiusWorkBox"
+                                layout="@layout/editbox_form_design"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingEnd="34dp" />
+
+                            <ImageView
+                                android:layout_width="29dp"
+                                android:layout_height="29dp"
+                                android:layout_gravity="center_vertical|end"
+                                android:layout_marginEnd="5dp"
+                                android:gravity="center"
+                                android:src="@mipmap/ic_arrow_down" />
+                        </FrameLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/otherArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <include
+                                android:id="@+id/otherBox"
+                                layout="@layout/editbox_form_design"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                            <include
+                                android:id="@+id/btn_type2"
+                                layout="@layout/btn_type_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/all_btn_height"
+                                android:layout_alignParentBottom="true"
+                                android:layout_gravity="bottom"
+                                android:layout_margin="5dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/noteArea"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp">
+
+                            <com.view.MTextView
+                                android:id="@+id/noteText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="NOTES"
+                                android:textColor="#ec1414"
+                                android:textSize="@dimen/txt_size_12" />
+
+                            <com.view.MTextView
+                                android:id="@+id/noteDetailsText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="NOTES"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/txt_size_12" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+        <LinearLayout
+            android:id="@+id/screenNoteAreaView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#F4F4F4"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <com.view.MTextView
+                android:id="@+id/demonoteText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:text="NOTES"
+                android:textColor="#ec1414"
+                android:textSize="@dimen/txt_size_12"
+                android:visibility="gone" />
+
+            <com.view.MTextView
+                android:id="@+id/demoText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:padding="10dp"
+                android:textAlignment="viewStart"
+                android:textColor="#272727"
+                android:textSize="@dimen/txt_size_14"
+                app:customTypeFace="@string/robotomediumFont" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_ufx_category"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f1f1f1"
+    android:orientation="vertical"
+    tools:context="com.taxifgo.driver.UfxCategoryActivity">
+
+    <include
+        android:id="@+id/toolbar_include"
+        layout="@layout/design_toolbar_general" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_below="@id/toolbar_include"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.view.MTextView
+                    android:id="@+id/introTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f1f1f1"
+                    android:gravity="center|start"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_15sdp"
+                    android:text="Select category below to add services you are going to provide"
+
+                    android:textAlignment="viewStart"
+                    android:textColor="#202020"
+                    android:textSize="@dimen/_11ssp"
+                    android:textStyle="bold"
+                    app:customTypeFace="@string/systemMediumFont" />
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+        <RelativeLayout
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/introTxt">
+
+            <com.view.pinnedListView.PinnedSectionListView
+                android:nestedScrollingEnabled="true"
+                android:id="@+id/category_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:divider="#f1f1f1"
+                android:dividerHeight="1dp"
+                android:footerDividersEnabled="false"
+                android:headerDividersEnabled="false" />
+
+            <com.view.MTextView
+                android:id="@+id/noResTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxLines="2"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txt_size_16"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <ProgressBar
+        android:id="@+id/loading"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <com.view.ErrorView
+        android:id="@+id/errorView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</RelativeLayout>
